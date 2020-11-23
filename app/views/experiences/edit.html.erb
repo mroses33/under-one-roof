@@ -1,2 +1,25 @@
-<h1>Experiences#edit</h1>
-<p>Find me in app/views/experiences/edit.html.erb</p>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 offset-sm-2 " id="form-color">
+        <div class="form-login">
+          <h1>Edit your experience</h1>
+          <%= simple_form_for @experience do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.country_select :country %>
+            <%= f.input :address %>
+            <%= f.input :kid_friendly, :label => "Suitable for children?" %>
+            <%= f.input :duration, :label => "Duration" %>
+            <%= f.input :max_guests, :label => "Maximum number of guests" %>
+            <%= f.input :language,  :label => "Language"%>
+            <div class="form-actions">
+            <%= f.submit %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
