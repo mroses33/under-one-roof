@@ -1,11 +1,10 @@
 class BookingsController < ApplicationController
+  before_action :find_experience, only: [:new, :create, :show]
   def new
-    find_experience
     @booking = Booking.new
   end
 
   def create
-    find_experience
     @booking
   end
 
@@ -13,12 +12,16 @@ class BookingsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_show_path, notice: 'Your booking was deleted.'
   end
 
   private
