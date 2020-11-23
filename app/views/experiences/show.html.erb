@@ -1,2 +1,4 @@
 <h1>Experiences#show</h1>
 <%= @experience.name %>
+
+<%= link_to "Book this experience", new_experience_booking_path(@experience) %>
