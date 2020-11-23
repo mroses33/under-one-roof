@@ -1,5 +1,8 @@
 <div class="container">
   <% @experiences.each do |experience| %>
     <%= experience.name %>
+    <%= link_to "Edit experience", edit_experience_path(experience) %>
   <% end %>
+  <br>
+  <%= link_to "Add an experience", new_experience_path %>
 </div>
