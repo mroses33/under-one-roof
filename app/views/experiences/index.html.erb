@@ -2,5 +2,7 @@
   <h1>All experiences</h1>
   <% @experiences.each do |experience| %>
     <%= experience.name %>
+    <%= link_to "remove", experience_path(experience), method: :delete %>
+
   <% end %>
 </div>
