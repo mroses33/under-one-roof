@@ -3,6 +3,7 @@ class Experience < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   has_many :items, dependent: :destroy
+  has_many :customers, through: :bookings
 
   validates :name, length: {minimum: 2}, presence: true
   validates :description, length: {minimum: 10}, presence: true
