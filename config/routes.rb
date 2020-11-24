@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :experiences do
+    resources :items, except: :show
     resources :bookings, only: [:new, :create, :show, :edit, :update] do
       member do
         patch :accept
@@ -13,8 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:destroy]
-
+  resources :bookings, only: [:destroy, :show, :edit, :update]
   resources :users, only: [:show]
 end
 
