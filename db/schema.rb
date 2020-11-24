@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_142826) do
     t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "confirmation", default: "Pending"
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
   end
@@ -57,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_142826) do
     t.string "country"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "kid_friendly"
+    t.boolean "kid_friendly", default: false
     t.string "address"
     t.time "duration"
     t.integer "max_guests"
@@ -65,6 +66,14 @@ ActiveRecord::Schema.define(version: 2020_11_24_142826) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["host_id"], name: "index_experiences_on_host_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "amount"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "experience_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +95,5 @@ ActiveRecord::Schema.define(version: 2020_11_24_142826) do
   add_foreign_key "bookings", "experiences"
   add_foreign_key "bookings", "users", column: "customer_id"
   add_foreign_key "experiences", "users", column: "host_id"
+  add_foreign_key "items", "experiences"
 end
