@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to bookings_show_path,  notice: 'Your booking was updated.'
+    redirect_to bookings_show_path, notice: 'Your booking was updated.'
   end
 
   def destroy
