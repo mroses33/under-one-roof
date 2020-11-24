@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :items, except: :show
-    resources :bookings, only: [:new, :create, :show, :edit, :update] do
+    resources :bookings, only: [:new, :create] do
       member do
         patch :accept
         patch :reject
