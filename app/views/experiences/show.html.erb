@@ -5,3 +5,4 @@
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 <%= link_to "Book this experience", new_experience_booking_path(@experience) %>
+<%= link_to "Back to experiences", experiences_path %>
