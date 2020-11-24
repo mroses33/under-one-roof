@@ -1,0 +1,6 @@
+<%= simple_form_for @user do |f|%>
+  <%= f.input :name, label: "Name" %>
+  <%= f.input :bio, label: "About me" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
