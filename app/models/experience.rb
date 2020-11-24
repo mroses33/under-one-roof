@@ -14,4 +14,5 @@ class Experience < ApplicationRecord
   validates :duration, presence: true
   validates :max_guests, presence: true
   validates :language, presence: true
+
 end
