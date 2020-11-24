@@ -1,0 +1,16 @@
+<div class="cards-list">
+  <% @experiences.each do |experience| %>
+    <%= link_to experience_path(experience) do %>
+      <div class="card-trip" >
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2> <%= experience.name %> </h2>
+            <p><%= experience.description %></p>
+          </div>
+            <h2 class="card-price"> £<%= experience.price %> </h2>
+          </div>
+        </div>
+     <% end %>
+  <% end %>
+</div>

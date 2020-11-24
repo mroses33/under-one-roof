@@ -1,12 +1,9 @@
 <div class="container">
   <h1>All experiences</h1>
   <br>
-  <% @experiences.each do |experience| %>
-    <%= experience.name %>
-    <%= link_to "View", experience_path(experience) %>
-    <%= link_to "Remove", experience_path(experience), method: :delete, data: { confirm: "Are you sure?" } %>
-    <%= link_to "Edit", edit_experience_path(experience) %>
-  <% end %>
+    <%= render "cards" %>
+    <%#= link_to "remove", experience_path(experience), method: :delete %>
+    <%#= link_to "edit", edit_experience_path(experience) %>
   <br>
   <%= link_to "Add an experience", new_experience_path %>
 </div>
