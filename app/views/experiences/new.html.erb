@@ -14,8 +14,10 @@
             <%= f.input :duration, :label => "Duration" %>
             <%= f.input :max_guests, :label => "Maximum number of guests" %>
             <%= f.input :language,  :label => "Language"%>
-            <%= f.button :submit, class: "btn btn-primary" %>
-          </div>
+            <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+            <div class="form-actions">
+              <%= f.button :submit, class: "btn btn-primary" %>
+            </div>
           <% end %>
         </div>
       </div>
