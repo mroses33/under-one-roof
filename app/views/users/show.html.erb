@@ -1,4 +1,5 @@
 <div class="container">
+  <br>
   <h1>Hello <strong><%= @user.name %></strong></h1>
   <hr>
   <div class="row">
@@ -11,7 +12,10 @@
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bookings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Experiences</a>
+          <a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="false">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Listings</a>
         </li>
       </ul>
     </div>
@@ -19,17 +23,24 @@
     <div class="col-md-10">
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="-tab">
+          <br>
           <h2>About me</h2>
             <p><%= @user.bio %></p>
               <% if current_user == @user %>
                 <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
               <% end %>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <h2> Bookings to confirm: </h2>
-          <%= render 'request_cards' %>
 
+        <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
+          <br>
+          <h2> Booking requests: </h2>
+          <%= render 'request_cards' %>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <br>
           <h2> Your bookings: </h2>
+          <br>
             <div class="cards-list">
                 <% @bookings.each do |booking| %>
                     <div class="card-trip" id = "already_booked">
@@ -56,13 +67,11 @@
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <h2>Your listings:</h2>
-          <%= render 'experiences/cards' %>
-
-          <!-- <h2> Your experiences </h2>
-          <% @experiences.each do |experience| %>
-            <%= experience.name %> ⚡️
-          <% end %> -->
+          <br>
+          <h2>Your listings:</h2>
+          <br>
+            <%= render 'experiences/cards' %>
+            <br>
         </div>
       </div>
     </div>
