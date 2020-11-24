@@ -1,19 +1,24 @@
+.cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 5px;
   padding-bottom: 2px;
-  width: 275px;
+  width: 225px;
   border-radius: 5px;
   // height: 200px;
-    display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
 
-.card-trip:hover{
+.card-trip a:hover{
   opacity: 0.7;
 }
 
@@ -21,7 +26,6 @@
   text-decoration: none;
   color: black;
 }
-
 
 .card-image > img {
   height: 160px;
@@ -55,13 +59,35 @@
 
 .card-trip .card-trip-infos {
   padding: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+
 
 }
 
 .card-trip-infos:hover {
   text-decoration: none;
+}
+
+#booking-card-text-acc {
+  color: #52b788;
+}
+
+#booking-card-text-rej {
+  color: #f94144;
+}
+
+#booking-card-text-pen {
+  color: #dda15e;
+}
+
+.confirm {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#booking-card-delete {
+  top: 7px;
+  right: 7px;
+  position: absolute;
 }
