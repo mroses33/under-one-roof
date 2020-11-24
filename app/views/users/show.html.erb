@@ -1,3 +1,18 @@
+
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Hello <%= @user.name %></h5>
+    <p class="card-text"><strong>About me:</strong>  <%= @user.bio %></p>
+    <% if current_user == @user %>
+      <%= link_to "Edit", edit_user_path(@user), class: "btn" %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container">
+  <h2>Your bookings</h2>
+
 <h1>Users#show</h1>
 <br>
 <div class = "container">
@@ -15,6 +30,7 @@
 <br>
 <div class="container">
   <h2> Your bookings: </h2>
+
   <% @bookings.each do |booking| %>
     ID: <%= booking.id %> - <%= booking.experience.name %> -  <p> Status:
     <%= booking.confirmation  %>
@@ -24,9 +40,15 @@
 </div>
 <br>
 <div class="container">
+
+  <h2>Your listing:</h2>
+  <%= render 'experiences/cards' %>
+</div>
+
   <h2> Your experiences </h2>
   <% @experiences.each do |experience| %>
     <%= experience.name %> ⚡️
   <% end %>
 </div>
 <br>
+>>>>>>> main
