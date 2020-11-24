@@ -18,7 +18,7 @@ class InstancesController < ApplicationController
     @instance = Instance.new(instance_params)
     @instance.experience = @experience
     if @instance.save
-      redirect_to experience_items_path
+      redirect_to experience_instances_path
     else
       render :new
     end
