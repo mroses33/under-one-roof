@@ -1,32 +1,36 @@
 <h1>Users#show</h1>
 <br>
-<div class = "container">
-  <h2> Bookings to confirm: </h2>
-  <% @experiences.each do |experience| %>
-    <% experience.bookings.each do |booking| %>
-      <% if booking.confirmation == "Pending" %>
-        <%= experience.name %>
-        <%= link_to "Accept", accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %>
-        <%= link_to "Reject", reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'request_cards' %>
 <br>
 <div class="container">
   <h2> Your bookings: </h2>
-  <% @bookings.each do |booking| %>
-    ID: <%= booking.id %> - <%= booking.experience.name %> -  <p> Status:
-    <%= booking.confirmation  %>
-    <%= link_to "❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
-    <br>
-  <% end %>
+  <div class="cards-list">
+      <% @bookings.each do |booking| %>
+          <div class="card-trip" id = "already_booked">
+            <div class="card-trip-infos">
+              <div>
+                <h2 id="booking-card-text"> <%= booking.id %> ⚜️ <%= booking.experience.name %> </h2>
+                <div class="confirm">
+                  <% if booking.confirmation == "Accepted"%>
+                    <p id="booking-card-text-acc"> <%= booking.confirmation %> ✅ </p>
+                  <% elsif booking.confirmation == "Rejected" %>
+                    <p id="booking-card-text-rej"> <%= booking.confirmation %> 🚫 </p>
+                  <% else %>
+                    <p id="booking-card-text-pen"> <%= booking.confirmation %> 🕔 </p>
+                  <% end %>
+                  <p id="booking-card-delete"> <%= link_to " ❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
+                </div>
+
+              </div>
+              <h2 class="card-trip-pricingc" id="booking-card-text"> </h2>
+            </div>
+          </div>
+      <% end %>
+  </div>
 </div>
 <br>
 <div class="container">
   <h2> Your experiences </h2>
-  <% @experiences.each do |experience| %>
-    <%= experience.name %> ⚡️
-  <% end %>
+    <%= render '/experiences/cards' %>
 </div>
 <br>
