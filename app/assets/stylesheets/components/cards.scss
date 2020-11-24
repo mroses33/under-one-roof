@@ -3,9 +3,14 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 5px;
+  padding-bottom: 2px;
   width: 275px;
   border-radius: 5px;
   // height: 200px;
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
 .card-trip:hover{
@@ -35,12 +40,26 @@
   margin: 0;
 }
 
+.para {
+  padding: 5px;
+  top: 8px;
+  right: 8px;
+  position: absolute;
+}
+
+
+.para a:hover {
+  color: #DA7F27;
+  transition: 0.5s;
+}
+
 .card-trip .card-trip-infos {
   padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
 .card-trip-infos:hover {

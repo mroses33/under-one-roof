@@ -1,13 +1,32 @@
 <h1>Users#show</h1>
-
-<div class="container">
-  <% @bookings.each do |booking| %>
-    <%= booking.id %> - <%= booking.experience.name %>
-  <% end %>
-</div>
-
-<div class="container">
+<br>
+<div class = "container">
+  <h2> Bookings to confirm: </h2>
   <% @experiences.each do |experience| %>
-    <%= experience.name %>
+    <% experience.bookings.each do |booking| %>
+      <% if booking.confirmation == "Pending" %>
+        <%= experience.name %>
+        <%= link_to "Accept", accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %>
+        <%= link_to "Reject", reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
+<br>
+<div class="container">
+  <h2> Your bookings: </h2>
+  <% @bookings.each do |booking| %>
+    ID: <%= booking.id %> - <%= booking.experience.name %> -  <p> Status:
+    <%= booking.confirmation  %>
+    <%= link_to "❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
+    <br>
+  <% end %>
+</div>
+<br>
+<div class="container">
+  <h2> Your experiences </h2>
+  <% @experiences.each do |experience| %>
+    <%= experience.name %> ⚡️
+  <% end %>
+</div>
+<br>
