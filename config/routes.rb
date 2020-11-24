@@ -6,11 +6,16 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :items, except: :show
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show, :edit, :update] do
+      member do
+        patch :accept
+        patch :reject
+      end
+    end
   end
 
   resources :bookings, only: [:destroy, :show, :edit, :update]
-
+  resources :users, only: [:show]
 end
 
 

@@ -31,8 +31,21 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_show_path, notice: 'Your booking was deleted.'
+    redirect_to user_path(current_user.id)
+  end
+
+  def accept
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(confirmation: "Accepted")
+    redirect_to user_path(current_user.id)
+  end
+
+  def reject
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(confirmation: "Rejected")
+    redirect_to user_path(current_user.id)
   end
 
   private
@@ -43,7 +56,6 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-
   end
 
   def booking_params

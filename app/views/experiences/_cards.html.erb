@@ -10,17 +10,18 @@
         <div class="card-trip-infos">
           <div>
             <h2> <%= experience.name %> </h2>
-            <p><%= experience.description %></p>
           </div>
             <h2 class="card-price"> £<%= experience.price %> </h2>
-          </div>
-            <% if experience.host_id == current_user.id %>
+        </div>
+            <div class="para">
+              <% if experience.host_id == current_user.id %>
               <%= link_to edit_experience_path(experience) do %>
                 <i class="fas fa-edit"></i>
               <% end %>
-              <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
                 <i class="fa fa-trash destroy_plane"></i>
               <% end %>
+            </div>
             <% end %>
         </div>
      <% end %>
