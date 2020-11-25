@@ -9,8 +9,8 @@
 }
 
 .logo img {
-  width: 140px;
-  margin: 20px;
+  width: 120px;
+  margin: 10px 0px 0 0;
 }
 
 .logo {
@@ -22,8 +22,12 @@
   position: absolute;
   right: 15px;
   top: 15px;
+  text-decoration: none;
 }
 
+.avatar a {
+  color: $black;
+}
 .nav-links {
   margin: 0 300px 0 300px;
   font-size: 20px;
@@ -38,4 +42,9 @@ ul {
 
 .nav-link {
   color: $black;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 0;
 }
