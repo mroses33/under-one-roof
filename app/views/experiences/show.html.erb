@@ -1,4 +1,5 @@
 <div class="container">
+  <br>
     <h1 class="display-4"><%= @experience.name %></h1>
 
 
@@ -33,16 +34,11 @@
         </li>
         <% end %>
 </ul>
-
-</div>
 <%= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
-
-
-  <h2> Experience listed in these categories: </h2>
-  <% @experience.categories.each do |category| %>
-    ⚡️ <%= category.name %>
-  <% end %>
-  <br>
+<h2> Experience listed in these categories: </h2>
+<% @experience.categories.each do |category| %>
+  ⚡️ <%= category.name %>
+<% end %>
+<br>
+<br>
 </div>
-
-
