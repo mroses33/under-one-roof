@@ -29,7 +29,7 @@
   color: $black;
 }
 .nav-links {
-  margin: 0 300px 0 300px;
+  margin: 0 auto;
   font-size: 20px;
   font-weight: bolder;
 }
@@ -42,6 +42,7 @@ ul {
 
 .nav-link {
   color: $black;
+  margin: 0 15px;
 }
 
 ol, ul, dl {
