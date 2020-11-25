@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_11_24_165045) do
-
+ActiveRecord::Schema.define(version: 2020_11_25_112441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +50,21 @@ ActiveRecord::Schema.define(version: 2020_11_24_165045) do
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "experience_categories", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "experience_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_experience_categories_on_category_id"
+    t.index ["experience_id"], name: "index_experience_categories_on_experience_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -68,16 +81,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_165045) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["host_id"], name: "index_experiences_on_host_id"
-  end
-
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.text "comment"
-    t.bigint "booking_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "instances", force: :cascade do |t|
@@ -98,6 +101,15 @@ ActiveRecord::Schema.define(version: 2020_11_24_165045) do
     t.bigint "experience_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -116,9 +128,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_165045) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "experiences"
   add_foreign_key "bookings", "users", column: "customer_id"
+  add_foreign_key "experience_categories", "categories"
+  add_foreign_key "experience_categories", "experiences"
   add_foreign_key "experiences", "users", column: "host_id"
-
-  add_foreign_key "reviews", "bookings"
   add_foreign_key "instances", "experiences"
   add_foreign_key "items", "experiences"
+  add_foreign_key "reviews", "bookings"
 end
