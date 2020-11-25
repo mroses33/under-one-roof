@@ -1,0 +1,5 @@
+Create a category for <%= @experience.name %>
+<%= simple_form_for [@experience, @experience_category] do |form| %>
+  <%= form.association :categories, collection: Category.all, as: :check_boxes, wrapper: :vertical_collection_inline %>
+  <%= form.submit %>
+<% end %>

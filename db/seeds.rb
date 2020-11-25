@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-booking = {date: '11-10-2020',start_time: '14:00', end_time: '15:00', adjusted_price: 200, experience_id: 1, customer_id: 1 }
-b = Booking.create!(booking)
-puts `#{b}`
+# booking = {date: '11-10-2020',start_time: '14:00', end_time: '15:00', adjusted_price: 200, experience_id: 1, customer_id: 1 }
+# b = Booking.create!(booking)
+# puts `#{b}`
+
+if Rails.env.development?
+  Category.destroy_all
+
+  category_names = ["Arts and Crafts", "Cookery"]
+  category_names.each do | name |
+      Category.create!(
+        name: name
+       )
+  end
+end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :experiences do
+    resources :experience_categories, only: [:new, :create]
     resources :items, except: :show
     resources :bookings, only: [:new, :create] do
       member do
@@ -15,9 +16,7 @@ Rails.application.routes.draw do
     resources :instances
   end
 
-  resources :bookings, only: [:destroy, :show, :edit, :update]
-
-  resources :bookings  do
+  resources :bookings, only: [:destroy, :show, :edit, :update] do
     resources :reviews, only: [:create, :new]
   end
 
