@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         patch :reject
       end
     end
+    resources :instances
   end
 
   resources :bookings, only: [:destroy, :show, :edit, :update]
