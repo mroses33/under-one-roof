@@ -1,12 +1,13 @@
-<div class="container">
-  <%= render "searchbar" %>
-  <h1>All experiences</h1>
-  <br>
+<div class="container-fluid ">
+    <%= render "searchbar" %>
+  <div class="cards-area d-flex ">
     <%= render "cards" %>
-    <%#= link_to "remove", experience_path(experience), method: :delete %>
-    <%#= link_to "edit", edit_experience_path(experience) %>
-  <br>
-  <%= render "map" %>
-  <%= link_to "Add an experience", new_experience_path %>
+    <%= render "map" %>
+  </div>
 </div>
-<br>
+
+
+
+  <%#= link_to "Add an experience", new_experience_path %>
+  <%#= link_to "remove", experience_path(experience), method: :delete %>
+  <%#= link_to "edit", edit_experience_path(experience) %>
