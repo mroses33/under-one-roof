@@ -1,0 +1,6 @@
+<div class="index-form form-inline justify-content-center m-3">
+  <%= form_tag experiences_path, :method => "get" do %>
+    <%= text_field_tag :query, params[:query], class: "form-control rounded-left", placeholder: "Find experience" %>
+    <%= submit_tag "Search", class: "btn btn-primary"  %>
+  <% end %>
+</div>

@@ -1,4 +1,11 @@
 class Experience < ApplicationRecord
+  include PgSearch::Model
+    pg_search_scope :search_experience,
+             against: [:name, :address, :country],
+               using: {
+                    tsearch: { prefix: true }
+                      }
+
   belongs_to :host, class_name: "User"
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
@@ -15,7 +22,6 @@ class Experience < ApplicationRecord
   validates :duration, presence: true
   validates :max_guests, presence: true
   validates :language, presence: true
-
 
 
   # def average_rating
