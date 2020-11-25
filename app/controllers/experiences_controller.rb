@@ -1,13 +1,18 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
 
-    @markers = @experiences.geocoded.map do |experience|
+    if params[:query].present?
+      @experiences = Experience.search_experience(params[:query])
+    else
+       @experiences = Experience.all
+    end
+    
+    
+       @markers = @experiences.geocoded.map do |experience|
       {
         lat: experience.latitude,
         lng: experience.longitude
       }
-    end
   end
 
   def show
@@ -51,6 +56,6 @@ class ExperiencesController < ApplicationController
   private
 
   def strong_params
-    params.require(:experience).permit(:name, :description, :price, :country, :address, :kid_friendly, :duration, :max_guests, :language, photos: [])
+    params.require(:experience).permit(:name, :description, :price, :country, :address, :kid_friendly, :duration, :max_guests, :language, photos: [], category_ids: [])
   end
 end

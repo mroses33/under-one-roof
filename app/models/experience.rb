@@ -1,6 +1,14 @@
 class Experience < ApplicationRecord
+  include PgSearch::Model
+    pg_search_scope :search_experience,
+             against: [:name, :address, :country],
+               using: {
+                    tsearch: { prefix: true }
+                      }
+  
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
 
   belongs_to :host, class_name: "User"
   has_many :bookings, dependent: :destroy
@@ -9,6 +17,8 @@ class Experience < ApplicationRecord
   has_many_attached :photos, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :customers, through: :bookings
+  has_many :experience_categories
+  has_many :categories, through: :experience_categories
 
   validates :name, length: {minimum: 2}, presence: true
   validates :description, length: {minimum: 10}, presence: true
@@ -18,7 +28,6 @@ class Experience < ApplicationRecord
   validates :duration, presence: true
   validates :max_guests, presence: true
   validates :language, presence: true
-
 
 
   # def average_rating
