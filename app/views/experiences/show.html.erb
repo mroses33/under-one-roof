@@ -34,6 +34,9 @@
         <% end %>
 </ul>
 </div>
+<%= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
+
+
 
 <%= link_to "Add to supply list", new_experience_item_path(@experience) %>
 
