@@ -1,7 +1,7 @@
 <div class="cards-list">
   <% @experiences.each do |experience| %>
-    <%= link_to experience_path(experience) do %>
-      <div class="card-trip" >
+
+      <div class="card-trip" ><%= link_to experience_path(experience) do %>
           <% if experience.photos.attached? %>
               <div class="card_image"><%= cl_image_tag experience.photos[0].key, width: 275, height: 160, crop: :fill %></div>
             <% else %>
@@ -23,7 +23,7 @@
               <% end %>
             </div>
             <% end %>
-        </div>
-     <% end %>
+             <% end %></div>
+
   <% end %>
 </div>
