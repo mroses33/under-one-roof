@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :items, except: :show
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] do
+      member do
+        patch :accept
+        patch :reject
+      end
+    end
+    resources :instances
   end
 
   resources :bookings, only: [:destroy, :show, :edit, :update]
@@ -16,4 +22,8 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:destroy]
+  resources :users, only: [:show, :edit, :update]
 end
+
+
+

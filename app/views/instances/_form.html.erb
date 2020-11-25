@@ -1,0 +1,9 @@
+
+<div class="container" id='experience-instance-dates'>
+      <%= simple_form_for [@experience, @instance] do |f| %>
+        <%= f.input :start_time, as: :string, required: false %>
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+</div>

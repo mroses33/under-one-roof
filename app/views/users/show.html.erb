@@ -1,0 +1,80 @@
+<div class="container">
+  <br>
+  <h1>Hello <strong><%= @user.name %></strong></h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-2 mb-3">
+      <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="false">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Listings</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-10">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="-tab">
+          <br>
+          <h2>About me</h2>
+            <p><%= @user.bio %></p>
+              <% if current_user == @user %>
+                <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+              <% end %>
+        </div>
+
+        <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
+          <br>
+          <h2> Booking requests: </h2>
+          <%= render 'request_cards' %>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <br>
+          <h2> Your bookings: </h2>
+          <br>
+            <div class="cards-list">
+                <% @bookings.each do |booking| %>
+                    <div class="card-trip" id = "already_booked">
+                      <div class="card-trip-infos">
+                        <div>
+                          <h2 id="booking-card-text"> <%= booking.id %> ⚜️ <%= booking.experience.name %> </h2>
+                          <div class="confirm">
+                            <% if booking.confirmation == "Accepted"%>
+                              <p id="booking-card-text-acc"> <%= booking.confirmation %> ✅ </p>
+                            <% elsif booking.confirmation == "Rejected" %>
+                              <p id="booking-card-text-rej"> <%= booking.confirmation %> 🚫 </p>
+                            <% else %>
+                              <p id="booking-card-text-pen"> <%= booking.confirmation %> 🕔 </p>
+                            <% end %>
+                            <p id="booking-card-delete"> <%= link_to " ❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
+                          </div>
+
+                        </div>
+                        <h2 class="card-trip-pricingc" id="booking-card-text"> </h2>
+                      </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <br>
+          <h2>Your listings:</h2>
+          <br>
+            <%= render 'experiences/cards' %>
+            <br>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-8 -->
+  </div>
+</div>

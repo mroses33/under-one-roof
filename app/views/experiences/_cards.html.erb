@@ -1,16 +1,29 @@
 <div class="cards-list">
   <% @experiences.each do |experience| %>
-    <%= link_to experience_path(experience) do %>
-      <div class="card-trip" >
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+
+      <div class="card-trip" ><%= link_to experience_path(experience) do %>
+          <% if experience.photos.attached? %>
+              <div class="card_image"><%= cl_image_tag experience.photos[0].key, width: 275, height: 160, crop: :fill %></div>
+            <% else %>
+              <div class="card-image"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' %></div>
+            <% end %>
         <div class="card-trip-infos">
           <div>
             <h2> <%= experience.name %> </h2>
-            <p><%= experience.description %></p>
           </div>
             <h2 class="card-price"> £<%= experience.price %> </h2>
-          </div>
         </div>
-     <% end %>
+            <div class="para">
+              <% if experience.host_id == current_user.id %>
+              <%= link_to edit_experience_path(experience) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
+                <i class="fa fa-trash destroy_plane"></i>
+              <% end %>
+            </div>
+            <% end %>
+             <% end %></div>
+
   <% end %>
 </div>
