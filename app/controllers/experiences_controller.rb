@@ -1,18 +1,17 @@
 class ExperiencesController < ApplicationController
   def index
-
     if params[:query].present?
       @experiences = Experience.search_experience(params[:query])
     else
-       @experiences = Experience.all
+      @experiences = Experience.all
     end
-    
-    
-       @markers = @experiences.geocoded.map do |experience|
+
+    @markers = @experiences.geocoded.map do |experience|
       {
         lat: experience.latitude,
         lng: experience.longitude
       }
+    end
   end
 
   def show
