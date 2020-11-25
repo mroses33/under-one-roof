@@ -5,6 +5,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    # @average_rating = @experience.average_rating
   end
 
   def new

@@ -1,0 +1,5 @@
+<%= simple_form_for [ @booking, @review ] do |form| %>
+    <%= form.input :rating %>
+    <%= form.input :comment %>
+    <%= form.submit class: 'btn btn-primary' %>
+<% end %>

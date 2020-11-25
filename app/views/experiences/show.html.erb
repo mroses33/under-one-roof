@@ -1,9 +1,40 @@
-<h1>Experiences#show</h1>
-<%= @experience.name %>
+<div class="container">
+    <h1 class="display-4"><%= @experience.name %></h1>
+
 
 <% @experience.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="img-fluid h-100vh" />
+<p><%= @experience.description %></p>
 <%= link_to "Book this experience", new_experience_booking_path(@experience) %>
+
+
+<h3 class="m-10">Reviews</h3>
+<ul class="list-group">
+        <% @experience.reviews.each do |review| %>
+          <div class="list-group-item  w-50 flex-column align-items-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1"><% review.rating.times do  %>
+                            <span>⭐️</span>
+                            <% end %>
+              </h5>
+              <small><%= link_to '❌',
+               review_path(review.id),
+               method: :delete,
+               data: { confirm: 'Are you sure?' }  %>
+              </small>
+            </div>
+            <p class="mb-1"><%= review.comment %></p>
+            <div class="text-right">
+              <small class="blockquote-footer">Posted by<cite title="Source Title"><%= review.booking.customer_id %></cite></small>
+            </div>
+          </div>
+        </li>
+        <% end %>
+</ul>
+</div>
+
 <%= link_to "Add to supply list", new_experience_item_path(@experience) %>
+
 
