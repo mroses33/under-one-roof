@@ -33,7 +33,10 @@
         </li>
         <% end %>
 </ul>
-  <%= link_to "Add to supply list", new_experience_item_path(@experience) %>
+
+</div>
+<%= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
+
 
   <h2> Experience listed in these categories: </h2>
   <% @experience.categories.each do |category| %>
