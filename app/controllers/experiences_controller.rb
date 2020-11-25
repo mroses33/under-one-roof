@@ -2,6 +2,7 @@ class ExperiencesController < ApplicationController
   def index
     if params[:query].present?
       @experiences = Experience.search_experience(params[:query])
+      flash[:notice] = "Unfortunately, no results for #{params[:query]}" if @experiences.length.zero?
     else
       @experiences = Experience.all
     end
