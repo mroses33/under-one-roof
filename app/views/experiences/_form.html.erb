@@ -1,30 +1,26 @@
-<div class="container">
+<div class = "form-div">
     <div class="row">
-      <div class="col-sm-9 offset-sm-2 " id="form-color">
+      <div class="col-sm-12 " id="form-color">
         <div class="form-login">
-          <h1>Add a new experience</h1>
           <%= simple_form_for @experience do |f| %>
             <%= f.input :name %>
             <%= f.input :description %>
             <%= f.input :price %>
             <%= f.country_select :country %>
             <%= f.input :address, :label => "Location" %>
-            <%= f.input :kid_friendly, :label => "Suitable for children?" %>
+            <br>
+            <%= f.input :kid_friendly, input_html: { class: "toggle" }, :label => "Suitable for children?" %>
             <%= f.input :duration, :label => "Duration" %>
             <%= f.input :max_guests, :label => "Maximum number of guests" %>
             <%= f.input :language,  :label => "Language"%>
             <%= f.input :photos, as: :file, input_html: {multiple: true} %>
-            <%= f.association :categories, collection: Category.all, as: :check_boxes, wrapper: :vertical_collection_inline %>
+            <%= f.association :categories, collection: Category.all, as: :check_boxes, wrapper: :vertical_collection_inline, input_html: { class: "box-for-change" } %>
             <div class="form-actions">
-              <%= f.button :submit, class: "btn btn-primary" %>
+              <%= f.button :submit, class: "btn-submit-form" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
+  <br>
 </div>
-<br>
-
-
-
-

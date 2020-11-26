@@ -1,9 +1,12 @@
-
-
-
-<div class="container" id='experience_date'>
-  <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :date, as: :string, required: false%>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+<div class = "form-div">
+  <div class="row">
+    <div class="col-sm-12 " id="form-color">
+      <div class="container" id='experience_date'>
+        <%= simple_form_for [@experience, @booking] do |f| %>
+          <%= f.input :date, as: :string, required: false%>
+           <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

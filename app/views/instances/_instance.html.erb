@@ -1,0 +1,8 @@
+<div class="instance-list">
+  <% @instances.each do |instance| %>
+    <h6><%= instance.start_time.strftime("%A, %B %d") %></h6>
+    <p><%= instance.start_time.strftime("%I %p") %></p>
+    <p>£<%=instance.experience.price %></p>
+  <% end %>
+  <button class="btn btn-primary" type="submit">Select</button>
+</div>

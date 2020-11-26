@@ -12,7 +12,7 @@
 if Rails.env.development?
   Category.destroy_all
 
-  category_names = ["Arts and Crafts", "Cookery"]
+  category_names = ["Arts and Crafts", "Cookery", "Child-friendly", "Outdoors", "Culture", "Tours", "Sport", "Games"]
   category_names.each do | name |
       Category.create!(
         name: name

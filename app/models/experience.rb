@@ -1,14 +1,13 @@
 class Experience < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   include PgSearch::Model
     pg_search_scope :search_experience,
              against: [:name, :address, :country],
                using: {
                     tsearch: { prefix: true }
                       }
-
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
-
 
   belongs_to :host, class_name: "User"
   has_many :bookings, dependent: :destroy
