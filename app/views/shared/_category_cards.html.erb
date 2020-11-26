@@ -1,35 +1,47 @@
 <div class="container">
   <div class="cards my-5">
+    <%= link_to experiences_path(query: "cooking") do %>
     <div class="card-category" style="background-image: url('assets/cooking.png');">
       <div class="inner">
         <h4>Cooking</h4>
       </div>
     </div>
+    <% end %>
+    <%= link_to experiences_path(query: "music") do %>
     <div class="card-category" style="background-image: url('assets/music.png');">
       <div class="inner">
         <h4>Music</h4>
       </div>
     </div>
+    <% end %>
+    <%= link_to experiences_path(query: "art") do %>
     <div class="card-category" style="background-image: url('assets/art.png');">
       <div class="inner">
         <h4>Art</h4>
       </div>
     </div>
+    <% end %>
+    <%= link_to experiences_path(query: "culture") do %>
     <div class="card-category" style="background-image: url('assets/culture.png');">
       <div class="inner">
         <h4>Culture</h4>
       </div>
     </div>
+    <% end %>
+    <%= link_to experiences_path(query: "kid+friendly") do %>
     <div class="card-category" style="background-image: url('assets/kids.png');">
       <div class="inner">
         <h4>For Kids</h4>
       </div>
     </div>
+    <% end %>
+    <%= link_to experiences_path(query: "entertainment") do %>
     <div class="card-category" style="background-image: url('assets/show.png');">
       <div class="inner">
         <h4>Entertainment</h4>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
