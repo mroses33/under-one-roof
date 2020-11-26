@@ -10,7 +10,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 225px;
-  height: 70px;
+  height: 80px;
   align-items: flex-start;
   border-radius: 5px;
   position: relative;
@@ -45,13 +45,13 @@
 }
 
 #accept-button {
-  background-color: #52b788 !important;
+
   text-decoration: none;
     opacity: 0.9;
 }
 
 #accept-button a {
-  background-color: #52b788 !important;
+
   text-decoration: none;
   color: black;
     opacity: 0.9;
@@ -59,14 +59,29 @@
 
 
 #reject-button {
-  background-color: #f94144 !important;
+
   text-decoration: none;
   opacity: 0.9;
 }
 
 #reject-button a {
-  background-color: #f94144 !important;
   text-decoration: none;
   color: black;
     opacity: 0.9;
 }
+
+#go-to-link a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffcdb2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+#go-to-link a:hover {
+  text-decoration: none;
+  font-style: italic;
+}
+

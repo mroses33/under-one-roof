@@ -1,0 +1,56 @@
+.footer {
+  background: #ffcdb2;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 130px;
+  padding: 0px 20px;
+  font-size: 15px;
+
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.footer-contact a:hover {
+  font-style: italic;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.footer-tc {
+  text-align: right;
+}
+
+.footer-tc a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
+  font-style: italic;
+  text-align: right;
+}
+
+.footer-tc a:hover {
+  font-style: italic;
+  text-decoration: none;
+  opacity: 1;
+}
