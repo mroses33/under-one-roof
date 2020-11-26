@@ -1,0 +1,28 @@
+<div class="cards-listing">
+  <% @experiences.each do |experience| %>
+      <div class="card-listing">
+        <%= link_to experience_path(experience) do %>
+          <% if experience.photos.attached? %>
+            <div class="card_image_listing"><%= cl_image_tag experience.photos[0].key, width: 275, height: 160, crop: :fill %></div>
+          <% else %>
+            <div class="card-image_listing"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' %></div>
+          <% end %>
+        <div class="card-listing-infos">
+            <h2> <%= experience.name %> </h2>
+            <h2 class="card-price-listing"> £<%= experience.price %> </h2>
+        </div>
+            <div class="para-list">
+              <% if experience.host_id == current_user.id %>
+                <%= link_to edit_experience_path(experience) do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+                <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
+                  <i class="fa fa-trash destroy_plane"></i>
+                <% end %>
+              <% end %>
+
+            </div>
+      <% end %>
+      </div>
+  <% end %>
+</div>
