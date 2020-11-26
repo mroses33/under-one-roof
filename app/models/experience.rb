@@ -5,7 +5,7 @@ class Experience < ApplicationRecord
                using: {
                     tsearch: { prefix: true }
                       }
-  
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -30,7 +30,8 @@ class Experience < ApplicationRecord
   validates :language, presence: true
 
 
-  # def average_rating
-  #   reviews.pluck(:rating) / reviews.count.to_f
-  # end
+  def average_rating
+    return 0 if reviews.empty?
+    reviews.pluck(:rating).sum / reviews.count.to_i
+  end
 end
