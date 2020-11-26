@@ -1,9 +1,21 @@
 <%= render "shared/carousel", experience: @experience %>
 
 <div class="container">
-  <br>
-    <h1 class="display-4"><%= @experience.name %></h1>
+  <div class="row">
+    <h4><%= @experience.name %></h4>
+    <h4>Review ⭐️</h4>
+    <br>
+    <p><%= @experience.description %></p>
+  </div>
+  <div class="row">
 
+  </div>
+  <div class="row">
+
+  </div>
+</div>
+
+<br>
 
 
 
@@ -29,13 +41,13 @@
             </div>
           </div>
         </li>
-        <% end %>
+      <% end %>
 </ul>
 <%= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
 <h2> Experience listed in these categories: </h2>
 <% @experience.categories.each do |category| %>
   ⚡️ <%= category.name %>
 <% end %>
+
 <br>
 <br>
-</div>
