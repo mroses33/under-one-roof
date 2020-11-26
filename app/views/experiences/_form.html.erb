@@ -14,10 +14,9 @@
             <%= f.input :duration, :label => "Duration" %>
             <%= f.input :max_guests, :label => "Maximum number of guests" %>
             <%= f.input :language,  :label => "Language"%>
-            <div id="image-div">
+            <div id="image-preview">
             </div>
             <%= f.input :photos, as: :file, input_html: {multiple: true, class: "d-none", id: 'photo-input'}, label_html: {class: "upload-photo"} , label: '📷 Upload photo(s)' %>
-            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
             <br>
             <br>
             <%= f.association :categories, collection: Category.all, as: :check_boxes, wrapper: :vertical_collection_inline, input_html: { class: "box-for-change" } %>
@@ -30,4 +29,3 @@
     </div>
   <br>
 </div>
-

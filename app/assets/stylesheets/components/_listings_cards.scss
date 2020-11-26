@@ -16,8 +16,9 @@
   align-items: flex-start;
 }
 
-.cards-listing a:hover {
+.card-listing:hover {
   opacity: 0.7;
+  transition: 0.5s;
 }
 
 .cards-listing a {
@@ -29,6 +30,11 @@
   height: 160px;
   width: 225px;
   object-fit: cover;
+}
+
+.card-image_listing {
+  height: 160px;
+  width: 225px;
 }
 
 .card-listing h2 {
@@ -87,4 +93,14 @@
   top: 7px;
   right: 7px;
   position: absolute;
+}
+
+#icon-listing-ex {
+  font-size: 90px;
+  padding: 20px 70px;
+  color: #dda15e;
+}
+
+.card-listing-infos h2 {
+  padding: 30px;
 }
