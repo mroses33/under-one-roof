@@ -60,7 +60,9 @@
 
                             <p id="booking-card-delete"> <%= link_to " ❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
                           </div>
-
+                          <div class="booking-reviews">
+                              <%= render :partial =>"reviews/new", locals: {booking: booking, review: Review.new} %>
+                          </div>
                         </div>
                         <h2 class="card-booking-pricing" id="booking-card-text"> </h2>
                       </div>
