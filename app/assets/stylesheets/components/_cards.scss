@@ -1,21 +1,21 @@
 .cards-list {
   z-index: 0;
   width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
   color: black;
-  grid-gap: 16px;
 }
+
+
 
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 225px;
-  height: 220px;
+  // height: 220px;
   align-items: flex-start;
   border-radius: 5px;
   position: relative;
+  margin: 10px;
 }
 
 .card-trip a:hover{
@@ -45,7 +45,7 @@
 }
 
 .para {
-  padding: 5px;
+  // padding: 5px;
   top: 8px;
   right: 8px;
   position: absolute;
