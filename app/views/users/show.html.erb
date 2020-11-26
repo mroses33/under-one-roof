@@ -51,7 +51,7 @@
                           <div class="confirm">
                             <% if booking.confirmation == "Accepted"%>
                               <p id="booking-card-text-acc"> <%= booking.confirmation %> ✅ </p>
-                              <p id="go-to-link"> <%= link_to "See booking", experience_path(booking.experience) %></p>
+                              <p id="go-to-link"> <%= link_to "See booking", booking_path(booking) %></p>
                             <% elsif booking.confirmation == "Rejected" %>
                               <p id="booking-card-text-rej"> <%= booking.confirmation %> 🚫 </p>
                             <% else %>
