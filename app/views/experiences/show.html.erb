@@ -1,14 +1,11 @@
+<%= render "shared/carousel", experience: @experience %>
+
 <div class="container">
   <br>
     <h1 class="display-4"><%= @experience.name %></h1>
 
 
-<% @experience.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="img-fluid h-100vh" />
-<p><%= @experience.description %></p>
-<%= link_to "Book this experience", new_experience_booking_path(@experience) %>
+
 
 
 <h3 class="m-10">Reviews</h3>
