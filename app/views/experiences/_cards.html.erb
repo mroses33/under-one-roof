@@ -10,7 +10,9 @@
         <div class="card-trip-infos">
             <h2> <%= experience.name %> </h2>
             <h2 class="card-price"> £<%= experience.price %> </h2>
+            <%= render "rating" , experience: experience %>
         </div>
+
             <div class="para">
               <% if experience.host_id == current_user.id %>
                 <%= link_to edit_experience_path(experience) do %>

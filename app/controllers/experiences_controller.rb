@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
+
     if params[:query].present?
       @experiences = Experience.search_experience(params[:query])
       flash[:notice] = "Unfortunately, no results for #{params[:query]}" if @experiences.length.zero?
@@ -17,7 +18,6 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
-    # @average_rating = @experience.average_rating
   end
 
   def new
@@ -52,6 +52,7 @@ class ExperiencesController < ApplicationController
     experience.destroy
     redirect_to experiences_index_path
   end
+
 
   private
 
