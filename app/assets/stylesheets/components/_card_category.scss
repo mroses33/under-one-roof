@@ -3,6 +3,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.cards a:hover {
+  text-decoration: none;
+  transform: translate3D(0,-1px,0) scale(1.03);
+  transition: .5s ;
+
+}
 .card-category {
   background-size: cover;
   background-position: center;
@@ -17,10 +24,6 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.card-category a:hover {
-    font-size: 30px;
-    transition: 0.5s;
-  }
 
 .inner {
     display: inline-block;
@@ -31,6 +34,8 @@
     color: #464654;
     background: rgba(255, 255, 255, 0.85);
 }
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
