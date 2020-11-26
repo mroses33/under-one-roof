@@ -1,11 +1,26 @@
-<div class="container" id="show-page">
+<div class="container-fluid">
+  <div class="experience-page d-flex">
+    <h2>Welcome to <%= @booking.experience.country %></h2>
+    <div class="info-card">
+      <p>Get ready for adventure!  And you don't even have to leave your
+        house!  You are <%= @booking.experience.name %> with <%= @booking.experience.host.name %>.
+        All the information you need for a fantastic night in is on this page. </p>
+    </div>
+  </div>
+</div>
 
-  <p><%= link_to "Back", root_path %></p>
+
+
+
+
+<!-- <div class="container" id="show-page"> -->
+
+  <!-- <p><%= link_to "Back", root_path %></p>
   <br>
   <br>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-12">
-      <h2 id="show-name">Booking experience<%=  @booking.experience.name %></h2>
+      <h2 id="show-name">Booking experience<%#=  @booking.experience.name %></h2>
       <table class="table table-bordered">
         <tbody>
           <thead>
@@ -22,8 +37,8 @@
             </tr>
         </tbody>
       </table>
-      <%= png.html_safe %>
+      <%#= png.html_safe %>
     </div>
   </div>
-</div>
+</div> -->
 
