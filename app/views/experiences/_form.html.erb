@@ -6,14 +6,20 @@
             <%= f.input :name %>
             <%= f.input :description %>
             <%= f.input :price %>
-            <%= f.country_select :country %>
             <%= f.input :address, :label => "Location" %>
+            <%= f.country_select :country, :label => "Country" %>
+            <br>
             <br>
             <%= f.input :kid_friendly, input_html: { class: "toggle" }, :label => "Suitable for children?" %>
             <%= f.input :duration, :label => "Duration" %>
             <%= f.input :max_guests, :label => "Maximum number of guests" %>
             <%= f.input :language,  :label => "Language"%>
-            <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+            <div id="image-div">
+            </div>
+            <%= f.input :photos, as: :file, input_html: {multiple: true, class: "d-none", id: 'photo-input'}, label_html: {class: "upload-photo"} , label: '📷 Upload photo(s)' %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+            <br>
+            <br>
             <%= f.association :categories, collection: Category.all, as: :check_boxes, wrapper: :vertical_collection_inline, input_html: { class: "box-for-change" } %>
             <div class="form-actions">
               <%= f.button :submit, class: "btn-submit-form" %>
@@ -24,3 +30,4 @@
     </div>
   <br>
 </div>
+

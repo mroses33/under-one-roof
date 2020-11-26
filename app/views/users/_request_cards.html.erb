@@ -1,15 +1,15 @@
 <div class = "container">
   <br>
-  <div class="cards-list">
+  <div class="cards-request-list">
     <% @experiences.each do |experience| %>
       <% experience.bookings.each do |booking| %>
         <% if booking.confirmation == "Pending" %>
-          <div class="card-trip" id ="already_booked" >
+          <div class="card-request" id ="already_booked" >
             <div class="card-trip-infos">
               <h2 id="booking-card-text"> Booking request for: <%= experience.name %> ⚜️ </h2>
               <div class="confirm">
-                <button type="button" class="btn btn-success"><%= link_to "Accept ✅", accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
-                <button type="button" class="btn btn-danger"><%= link_to "Reject 🚫", reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
+                <button type="button" class="btn btn-success" id="accept-button"><%= link_to "Accept ✅", accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
+                <button type="button" class="btn btn-danger" id="reject-button"><%= link_to "Reject 🚫", reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
               </div>
             </div>
           </div>
