@@ -1,0 +1,72 @@
+.cards-booking-list {
+  display: grid;
+  color: black;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-booking {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 225px;
+  height: 70px;
+  align-items: flex-start;
+  border-radius: 5px;
+  position: relative;
+  padding: 5px;
+}
+
+#booking-card-text {
+  font-size: 20px;
+}
+
+.cards-request-list {
+  display: grid;
+  color: black;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-request {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 225px;
+  height: 120px;
+  align-items: flex-start;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+}
+
+#booking-card-delete a {
+  text-decoration: none;
+}
+
+#accept-button {
+  background-color: #52b788 !important;
+  text-decoration: none;
+    opacity: 0.9;
+}
+
+#accept-button a {
+  background-color: #52b788 !important;
+  text-decoration: none;
+  color: black;
+    opacity: 0.9;
+}
+
+
+#reject-button {
+  background-color: #f94144 !important;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+#reject-button a {
+  background-color: #f94144 !important;
+  text-decoration: none;
+  color: black;
+    opacity: 0.9;
+}
