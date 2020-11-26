@@ -51,14 +51,13 @@
                           <div class="confirm">
                             <% if booking.confirmation == "Accepted"%>
                               <p id="booking-card-text-acc"> <%= booking.confirmation %> ✅ </p>
-                              <%= link_to booking_path(booking.experience) do %>
-                                <button type="button" class="btn btn-primary">Primary</button>
-                              <% end %>
+                              <p id="go-to-link"> <%= link_to "See booking", experience_path(booking.experience) %></p>
                             <% elsif booking.confirmation == "Rejected" %>
                               <p id="booking-card-text-rej"> <%= booking.confirmation %> 🚫 </p>
                             <% else %>
                               <p id="booking-card-text-pen"> <%= booking.confirmation %> 🕔 </p>
                             <% end %>
+
                             <p id="booking-card-delete"> <%= link_to " ❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
                           </div>
 
