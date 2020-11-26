@@ -14,7 +14,8 @@
 
 .box-for-change + label {
   cursor: pointer;
-  padding: 5px;
+  padding: 5px 15px;
+  margin: 5px;
   border-radius: 45px;
   border: 1px solid #FFBD59;
   color: #FFBD59 !important;
@@ -28,17 +29,19 @@
 }
 
 .btn-submit-form {
-  padding: 10px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white ;
   border-radius: 20px;
-  border: 1px solid #FFBD59;
-  background-color: white;
-  color: #FFBD59;
+  border: 1px solid #FFBD59 !important;
+  color: #FFBD59 !important;
   opacity: 0.7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .btn-submit-form:hover {
-  color: white;
+  color: white !important;
   background-color: #FFBD59;
 }
 
@@ -67,7 +70,7 @@
 }
 
 .toggle:checked + label::before {
-  background-color: #1EDD88;
+  background-color: #FFBD59;
 }
 
 .toggle + label::after {
@@ -98,4 +101,49 @@ button {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.upload-photo {
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #FFBD59 !important;
+  color: #FFBD59 !important;
+  opacity: 0.7;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
+#photo-preview {
+  border-radius: 5px;
+}
+
+.upload-photo:hover {
+  color: white !important;
+  background-color: #FFBD59;
+}
+
+#devise-links a {
+  text-decoration: none;
+  color: #FFBD59 !important;
+}
+
+#devise-links a:hover {
+  text-decoration: none;
+  font-style: italic;
+}
+
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #FFBD59 !important;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+   color: black !important;
+}
+
+select {
+  width: 100%;
+  border-color: #FFBD59 !important;
+  padding: 8px;
+
+}

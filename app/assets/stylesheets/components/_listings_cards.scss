@@ -1,66 +1,63 @@
-.cards-list {
-  z-index: 0;
-  width: 100%;
+.cards-listing {
   color: black;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-
-.card-trip {
+.card-listing {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 225px;
-  // height: 220px;
-  align-items: flex-start;
+  height: 220px;
   border-radius: 5px;
   position: relative;
-  margin: 10px;
+  align-items: flex-start;
 }
 
-.card-trip a:hover{
+.cards-listing a:hover {
   opacity: 0.7;
 }
 
-.cards-list a {
+.cards-listing a {
   text-decoration: none;
   color: black;
 }
 
-.card-image > img {
+.card-image_listing > img {
   height: 160px;
   width: 225px;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-listing h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding: 5px;
 }
 
-.card-trip p {
+.card-listing p {
   font-size: 12px;
   margin: 0;
+  padding: 5px;
 }
 
-.para {
-  // padding: 5px;
+.para-list {
+  padding: 5px;
   top: 8px;
   right: 8px;
   position: absolute;
 }
 
-
-.para a:hover {
+.para-list a:hover {
   color: #DA7F27;
   transition: 0.5s;
 }
 
-.card-trip .card-trip-infos {
+.card-listing .card-trip-infos {
   padding: 5px;
-
-
 }
 
 .card-trip-infos:hover {
