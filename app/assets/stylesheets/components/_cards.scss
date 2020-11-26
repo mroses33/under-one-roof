@@ -1,11 +1,10 @@
 .cards-list {
   z-index: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   color: black;
 }
+
+
 
 .card-trip {
   overflow: hidden;
@@ -13,9 +12,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 225px;
   // height: 220px;
-  // align-items: flex-start;
+  align-items: flex-start;
   border-radius: 5px;
   position: relative;
+  margin: 10px;
 }
 
 .card-trip a:hover{
