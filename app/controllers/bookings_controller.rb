@@ -1,9 +1,21 @@
 class BookingsController < ApplicationController
+  require 'rqrcode'
+
   before_action :set_experience, only: [:new, :create]
   before_action :set_booking, only: [:show, :edit, :update]
 
   def new
     @booking = Booking.new
+    qrcode = RQRCode::QRCode.new("http://github.com/")
+
+    # NOTE: showing with default options specified explicitly
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    )
   end
 
   def create
