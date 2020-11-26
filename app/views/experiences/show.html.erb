@@ -1,29 +1,56 @@
-<%= render "shared/carousel", experience: @experience %>
-
-<div class="container">
-  <div class="row">
-    <div>
-      <h4><%= @experience.name %></h4>
-      <h3>Review ⭐️</h3>
+<div class="main-container">
+  <div>
+    <%= render "shared/carousel", experience: @experience %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="exp-card column-left">
+        <div>
+          <h4><%= @experience.name %></h4>
+          <p><strong>⭐️ 4/5</strong></p>
+          <p><%= @experience.description %></p>
+        </div>
+        <div class="border-bottom"></div>
+        <div>
+          <h4>Hosted by ...<%#= @host.name %></h4>
+          <p><i class="far fa-clock"></i> 2h</p>
+          <p><i class="fas fa-desktop"></i> Zoom meeting</p>
+          <p><i class="fas fa-users"></i> max 6 people</p>
+        </div>
+         <div class="border-bottom"></div>
+        <div>
+          <h4>Supplies</h4>
+          <p>blablablavla</p>
+        </div>
+      </div>
+      <div class="column-form">
+        <%= render "bookings/form", experience: @experience, booking: @booking %>
+      </div>
     </div>
-    <div>
-      <p><%= @experience.description %></p>
-    </div>
   </div>
-  <div class="row">
+  <div class="container reviews">
+    <h2>Reviews</h2>
+  </div>
 
-  </div>
-  <div class="row">
-
-  </div>
 </div>
 
-<br>
 
 
 
 
-<h3 class="m-10">Reviews</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3 class="m-10">Reviews</h3>
 <ul class="list-group">
         <% @experience.reviews.each do |review| %>
           <div class="list-group-item  w-50 flex-column align-items-start">
@@ -45,12 +72,11 @@
           </div>
         </li>
       <% end %>
-</ul>
-<%= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
-<h2> Experience listed in these categories: </h2>
-<% @experience.categories.each do |category| %>
-  ⚡️ <%= category.name %>
-<% end %>
+</ul> -->
+<%#= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
+<!-- <h2> Experience listed in these categories: </h2> -->
+<%# @experience.categories.each do |category| %>
+  <!-- ⚡️ <%#= category.name %> -->
+<%# end %>
 
-<br>
-<br>
+

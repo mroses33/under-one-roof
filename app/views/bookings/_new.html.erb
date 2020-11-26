@@ -3,6 +3,6 @@
 <br>
 <%#= render "calendar" %>
 
-<%= render "form" %>
+<%= render "bookings/form", experience:@experience, booking:@booking %>
 <p>For any inqueries - Ask the host:</p>
-<%= @svg.html_safe %>
+<%#= @svg.html_safe %>

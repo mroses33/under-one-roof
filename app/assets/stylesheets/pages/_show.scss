@@ -1,0 +1,40 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.exp-card {
+  // background: white;
+  // border-radius: 20px;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  margin-top: 40px;
+}
+
+.border-bottom {
+  margin-bottom: 15px;
+}
+
+.column-form {
+  // flex: 40%;
+}
+
+.column-left {
+  flex: 50%;
+}
+
+
+// @media(max-width: 992px) {
+//   .container { width: 700px; }
+// }
+
+// @media(max-width: 768px) {
+//   .container { width: 500px; }
+// }
+
+// @media(max-width: 480px) {
+//   .container { width: 350px; }
+// }
