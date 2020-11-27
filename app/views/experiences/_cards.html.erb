@@ -2,27 +2,53 @@
   <% @experiences.each do |experience| %>
     <%= link_to experience_path(experience) do %>
       <div class="card-trip" >
-        <% if experience.photos.attached? %>
-          <div class="card_image"><%= cl_image_tag experience.photos[0].key, width: 275, height: 160, crop: :fill %></div>
-        <% else %>
-          <div class="card-image"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=160&w=275' %></div>
-        <% end %>
-        <div class="card-trip-infos">
-          <h2> <%= experience.name %> </h2>
-          <h2 class="card-price"> £<%= experience.price %> </h2>
-          <%= render "experiences/rating" , experience: experience %>
-        </div>
-        <div class="para">
-          <% if experience.host_id == current_user.id %>
-            <%= link_to edit_experience_path(experience) do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-            <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
-              <i class="fa fa-trash destroy_plane"></i>
-            <% end %>
+        <div class="card-photo">
+          <% if experience.photos.attached? %>
+            <div class="card_image"><%= cl_image_tag experience.photos[0].key, width: 300, height: 170, crop: :fill %></div>
+          <% else %>
+            <div class="card-image"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300' %></div>
           <% end %>
+        </div>
+        <div class="card-trip-infos d-flex justify-content-center align-items-center flex-column">
+          <% if experience.host.photo.attached? %>
+            <%= cl_image_tag(experience.host.photo.key, width: 40, height: 40, class: "avatar-card dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+          <% else %>
+            <img class="avatar-card dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+          <% end %>
+          <p ><%= experience.host.name %></p>
+          <h2 class="mt-3"><%= experience.name %></h2>
+        </div>
+        <div class="card-spec-info d-flex justify-content-between">
+          <div class="d-flex justify-content-center align-items-center flex-column border-right w-25">
+            <p> £<%= experience.price %> </p>
+            <p>PRICE</p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center flex-column border-right w-50">
+            <p> <%= experience.duration %> hours </p>
+            <p>DURATION</p>
+          </div>
+          <div class="d-flex justify-content-center align-items-center flex-column w-25">
+            <% if experience.average_rating == 0 %>
+              <p>no ratings</p>
+            <% else %>
+              <p><%= experience.average_rating %>/5</p>
+            <% end %>
+            <p>RATING</p>
+          </div>
         </div>
       </div>
     <% end %>
   <% end %>
 </div>
+
+   <!--      <div class="para">
+          <%# if experience.host_id == current_user.id %>
+            <%#= link_to edit_experience_path(experience) do %>
+              <i class="fas fa-edit"></i>
+            <#% end %>
+            <%#= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
+              <i class="fa fa-trash destroy_plane"></i>
+            <%# end %>
+          <%# end %>
+        </div>
+ -->

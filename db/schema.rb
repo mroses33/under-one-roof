@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_112441) do
+ActiveRecord::Schema.define(version: 2020_11_27_122542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,11 +75,11 @@ ActiveRecord::Schema.define(version: 2020_11_25_112441) do
     t.float "longitude"
     t.boolean "kid_friendly", default: false
     t.string "address"
-    t.time "duration"
     t.integer "max_guests"
     t.string "language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "duration"
     t.index ["host_id"], name: "index_experiences_on_host_id"
   end
 
