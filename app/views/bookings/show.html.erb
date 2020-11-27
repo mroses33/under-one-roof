@@ -1,28 +1,51 @@
-<div class="container" id="show-page">
-
-  <p><%= link_to "Back", root_path %></p>
+<div class="container">
   <br>
-  <br>
+  <h1>Welcome to <%= @booking.experience.country %></h1>
+  <hr>
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-12">
-      <h2 id="show-name">Booking experience<%=  @booking.experience.name %></h2>
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Ref.N.</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-          </thead>
-            <tr>
-              <td><%= @booking.id %></td>
-              <td><%= @booking.date %></td>
-              <td><%= @booking.start_time %></td>
-              <td><%= @booking.end_time %></td>
-            </tr>
-        </tbody>
-      </table>
+    <div class="col-md-2 mb-3">
+      <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="welcome-tab" data-toggle="tab" href="#welcome" role="tab" aria-controls="home" aria-selected="true">Welcome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="supplies-tab" data-toggle="tab" href="#supplies" role="tab" aria-controls="profile" aria-selected="false">Supplies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="learn-more-tab" data-toggle="tab" href="#learn_more" role="tab" aria-controls="requests" aria-selected="false">Learn More</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact Your Host</a>
+        </li>
+      </ul>
     </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-10">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="welcome" role="tabpanel" aria-labelledby="-tab">
+          <p>Get ready for adventure!  And you don't even have to leave your
+            house!  You are <%= @booking.experience.name %> with <%= @booking.experience.host.name %>.
+            All the information you need for a fantastic night in is on this page. </p>
+        </div>
+
+        <div class="tab-pane fade" id="supplies" role="tabpanel" aria-labelledby="requests-tab">
+          <ul>
+            <% @booking.experience.items.each do |item| %>
+              <li><%= item.name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+
+        <div class="tab-pane fade" id="learn_more" role="tabpanel" aria-labelledby="profile-tab">
+
+        </div>
+
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-8 -->
   </div>
 </div>
-
