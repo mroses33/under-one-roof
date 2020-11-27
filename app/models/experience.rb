@@ -33,4 +33,10 @@ class Experience < ApplicationRecord
     return 0 if reviews.empty?
     reviews.pluck(:rating).sum / reviews.count.to_i
   end
+
+  def unavailable_dates
+    bookings.pluck(:start_time).map do |range|
+      { from: range }
+    end
+  end
 end
