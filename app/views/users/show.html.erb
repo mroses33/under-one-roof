@@ -59,7 +59,7 @@
                         </div>
                           <div class="d-flex flex-column">
                             <% if booking.confirmation == "Accepted" %>
-                              <button class="btn btn-primary"> <%= link_to "See booking", booking_path(booking) %>
+                              <%= link_to "See booking", booking_path(booking), class: "btn btn-primary" %>
                               <%= render :partial =>"reviews/new", locals: {booking: booking, review: Review.new} %>
                             <% end %>
                           <div class="booking-reviews">
