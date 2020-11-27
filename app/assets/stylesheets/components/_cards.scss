@@ -17,6 +17,7 @@
   margin: 10px;
 }
 
+
 .card-photo {
   height: 170px;
 }
@@ -30,7 +31,8 @@
   height: 60px;
 }
 
-.card-trip a:hover{
+.card-trip:hover{
+  transition: 0.5s;
   opacity: 0.7;
 }
 
@@ -75,8 +77,6 @@
 
 .card-trip .card-trip-infos {
   padding: 5px;
-
-
 }
 
 .card-trip-infos:hover {
