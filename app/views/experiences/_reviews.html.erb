@@ -1,0 +1,22 @@
+<ul class="list-group">
+        <% @experience.reviews.each do |review| %>
+          <div class="list-group-item  w-auto flex-column align-items-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1"><% review.rating.times do  %>
+                            <span>⭐️</span>
+                            <% end %>
+              </h5>
+              <small><%= link_to '❌',
+               review_path(review.id),
+               method: :delete,
+               data: { confirm: 'Are you sure?' }  %>
+              </small>
+            </div>
+            <p class="mb-1"><%= review.comment %></p>
+            <div class="text-right">
+              <small class="blockquote-footer">Posted by<cite title="Source Title"> <%= review.booking.customer.name %></cite></small>
+            </div>
+          </div>
+        </li>
+      <% end %>
+</ul>
