@@ -7,7 +7,7 @@
       <div class="exp-card column-left">
         <div>
           <h4><%= @experience.name %></h4>
-          <p><strong>⭐️ 4/5</strong></p>
+          <p><%= render "rating" , experience: @experience %></p>
           <p><%= @experience.description %></p>
         </div>
         <div class="border-bottom"></div>
@@ -32,40 +32,15 @@
   </div>
   <div class="container reviews">
     <h2>Reviews</h2>
-    <div class="row review-box">
-      <div>
-        <h5>Sophia ⭐️</h5><br>
-        <p>dfmbkfbkldfbfdbkmfdlbmdfblkdfbdfbls</p>
-      </div>
+    <div class="review-box">
+      <%= render "reviews" %>
     </div>
   </div>
 </div>
 
 
 
-<!-- <h3 class="m-10">Reviews</h3>
-<ul class="list-group">
-        <% @experience.reviews.each do |review| %>
-          <div class="list-group-item  w-50 flex-column align-items-start">
-            <div class="d-flex justify-content-between">
-              <h5 class="mb-1"><% review.rating.times do  %>
-                            <span>⭐️</span>
-                            <% end %>
-              </h5>
-              <small><%= link_to '❌',
-               review_path(review.id),
-               method: :delete,
-               data: { confirm: 'Are you sure?' }  %>
-              </small>
-            </div>
-            <p class="mb-1"><%= review.comment %></p>
-            <div class="text-right">
-              <small class="blockquote-footer">Posted by<cite title="Source Title"><%= review.booking.customer_id %></cite></small>
-            </div>
-          </div>
-        </li>
-      <% end %>
-</ul> -->
+
 <%#= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
 <!-- <h2> Experience listed in these categories: </h2> -->
 <%# @experience.categories.each do |category| %>
