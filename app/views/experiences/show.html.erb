@@ -13,7 +13,7 @@
         <div class="border-bottom"></div>
         <div>
           <h4>Hosted by <%#= @host.name %></h4>
-          <p><i class="far fa-clock"></i><%= @experience.duration.strftime(" %l h %M min") %></p>
+          <p><i class="far fa-clock"></i> <%= @experience.duration %>h</p>
           <p><i class="fas fa-desktop"></i> Zoom meeting</p>
           <p><i class="fas fa-users"></i> <%= @experience.max_guests %></p>
         </div>
@@ -38,8 +38,8 @@
   </div>
 </div>
 
-
-
+<!-- code for hours and minute for @experience.duration -->
+<!-- .strftime(" %l h %M min") -->
 
 <%#= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
 <!-- <h2> Experience listed in these categories: </h2> -->
