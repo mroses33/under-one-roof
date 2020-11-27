@@ -13,7 +13,7 @@
           <% if experience.host.photo.attached? %>
             <%= cl_image_tag(experience.host.photo.key, width: 40, height: 40, class: "avatar-card dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% else %>
-            <img class="avatar-card dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar-card dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%=asset_path('profile.jpg')%>" />
           <% end %>
           <p ><%= experience.host.name %></p>
           <h2 class="mt-3"><%= experience.name %></h2>
