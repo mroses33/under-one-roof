@@ -27,6 +27,8 @@ import "bootstrap";
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { previewImageOnFile } from '../components/photo_apreview';
+
 
 
 // Internal imports, e.g:
@@ -38,5 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initMapbox();
   previewImageOnFileSelect();
-
+  previewImageOnFile();
 });

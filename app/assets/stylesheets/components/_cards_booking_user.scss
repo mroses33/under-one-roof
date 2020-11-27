@@ -1,19 +1,19 @@
 .cards-booking-list {
-  display: grid;
-  color: black;
-  grid-gap: 16px;
-  grid-template-columns: 1fr 1fr 1fr;
+  // display: grid;
+  // color: black;
+  // grid-gap: 16px;
+  // grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card-booking {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 225px;
-  height: 80px;
-  align-items: flex-start;
-  border-radius: 5px;
-  position: relative;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 500px;
+  height: 100px;
+  // align-items: flex-start;
+  border-radius: 10px;
+  // position: relative;
   padding: 5px;
 }
 
