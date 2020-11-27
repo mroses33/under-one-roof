@@ -9,13 +9,26 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 225px;
-  // height: 220px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 300px;
   align-items: flex-start;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   margin: 10px;
+}
+
+
+.card-photo {
+  height: 170px;
+}
+
+.card-trip-infos {
+  height: 110px;
+}
+
+.card-spec-info {
+  background-color: $light-orange;
+  height: 60px;
 }
 
 .card-trip:hover{
@@ -28,9 +41,13 @@
   color: black;
 }
 
+.avatar {
+  text-decoration: none;
+}
+
 .card-image > img {
-  height: 160px;
-  width: 225px;
+  height: 170px;
+  width: 300px;
   object-fit: cover;
 }
 
@@ -90,3 +107,9 @@
   right: 7px;
   position: absolute;
 }
+
+.avatar-card {
+  width: 40px;
+  border-radius: 50%;
+}
+
