@@ -24,11 +24,28 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="-tab">
           <br>
-          <h2>About me</h2>
+          <h2>About me...</h2>
             <p><%= @user.bio %></p>
               <% if current_user == @user %>
-                <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-              <% end %>
+
+                <div class = "form-div">
+                  <div class="row">
+                    <div class="col-sm-10 offset-sm-1 " id="form-color">
+                     <div class="form-login">
+                      <%= simple_form_for @user do |f|%>
+                        <%= f.input :name, label: "Name" %>
+                        <%= f.input :bio, label: "About me" %>
+                        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+                        <br>
+                        <%= f.input :photo, as: :file, input_html: { class: 'd-none', id: 'photo-input-a'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
+                        <%= f.button :submit, class: "btn-submit-form" %>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                 </div>
+                  <% end %>
         </div>
 
         <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
