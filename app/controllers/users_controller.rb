@@ -3,6 +3,16 @@ class UsersController < ApplicationController
     @user = current_user
     @experiences = Experience.where(host_id: current_user.id)
     @bookings = Booking.where(customer_id: current_user.id)
+    qrcode = RQRCode::QRCode.new("http://github.com/")
+
+    # NOTE: showing with default options specified explicitly
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    )
   end
 
   def edit

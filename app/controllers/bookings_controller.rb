@@ -6,16 +6,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    qrcode = RQRCode::QRCode.new("http://github.com/")
-
-    # NOTE: showing with default options specified explicitly
-    @svg = qrcode.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      module_size: 6,
-      standalone: true
-    )
   end
 
   def create
@@ -32,6 +22,16 @@ class BookingsController < ApplicationController
   end
 
   def show
+    qrcode = RQRCode::QRCode.new("+447470043682")
+
+    # NOTE: showing with default options specified explicitly
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    )
   end
 
   def edit

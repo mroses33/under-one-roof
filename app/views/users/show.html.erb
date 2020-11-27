@@ -39,7 +39,7 @@
         </div>
 
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <br>
+
           <h2> Your bookings: </h2>
           <br>
             <div class="cards-booking-list">
@@ -57,7 +57,6 @@
                             <% else %>
                               <p id="booking-card-text-pen"> <%= booking.confirmation %> 🕔 </p>
                             <% end %>
-
                             <p id="booking-card-delete"> <%= link_to " ❌", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" }%></p>
                           </div>
                           <div class="booking-reviews">
