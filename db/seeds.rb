@@ -9,7 +9,6 @@
 # b = Booking.create!(booking)
 # puts `#{b}`
 
-if Rails.env.development?
   Category.destroy_all
 
   category_names = ["Arts and Crafts", "Cookery", "Child-friendly", "Outdoors", "Culture", "Tours", "Sport", "Games"]
@@ -18,4 +17,4 @@ if Rails.env.development?
         name: name
        )
   end
-end
+
