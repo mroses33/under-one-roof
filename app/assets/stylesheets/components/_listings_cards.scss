@@ -10,7 +10,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 225px;
-  height: 220px;
+  height: 235px;
   border-radius: 5px;
   position: relative;
   align-items: flex-start;
@@ -102,5 +102,9 @@
 }
 
 .card-listing-infos h2 {
-  padding: 30px;
+  padding: 0px;
+}
+
+.card-listing-infos h3 {
+  font-size: 16px;
 }
