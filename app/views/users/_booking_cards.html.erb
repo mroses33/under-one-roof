@@ -1,0 +1,35 @@
+    <div class="cards-booking-list">
+      <% @bookings.each do |booking| %>
+        <div class="card-booking d-flex justify-content-between align-items-center m-3">
+          <div class="d-flex justify-content-start align-items-center">
+            <% if booking.experience.photos.attached? %>
+              <%= cl_image_tag booking.experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
+            <% else %>
+              <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
+            <% end %>
+              <div class="card-info p-3">
+                <h3 style="margin-bottom:0"> <%= booking.experience.name %> </h3>
+                <p style="margin-bottom:0"><%#= booking.date.strftime("%B %d, %Y") %>  </p>
+                <p style="margin-bottom:0"><%= booking.experience.duration %> hours </p>
+                <div class="confirm">
+                  <% if booking.confirmation == "Rejected" %>
+                    <p style="margin-bottom:0"><%= booking.experience.host.name %> is unable to complete this booking.</p>
+                  <% elsif booking.confirmation == "Pending" %>
+                    <p style="margin-bottom:0">Your booking is pending.</p>
+                  <% end %>
+                </div>
+                <div class="d-flex flex-column">
+                  <% if booking.confirmation == "Accepted" %>
+                    <%= link_to "See booking", booking_path(booking), class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+              </div>
+          </div>
+            <div class="m-4">
+              <% if booking.confirmation == "Accepted" %>
+                <%= render :partial =>"reviews/new", locals: {booking: booking, review: Review.new} %>
+              <% end %>
+            </div>
+        </div>
+      <% end %>
+</div>
