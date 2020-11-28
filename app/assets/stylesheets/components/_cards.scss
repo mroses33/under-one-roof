@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.card-trip-infos p {
+  text-transform: uppercase;
+}
+
 .card-spec-info {
   background-color: $light-orange;
   height: 60px;
