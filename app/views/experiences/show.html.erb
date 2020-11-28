@@ -1,4 +1,70 @@
 <div class="main-container">
+  <div>
+    <div class="show-page_header">
+      <div class="show-page-header row">
+        <div class="show-page-header_content col-12 colmd-6 col-lg-5">
+          <div>
+            <h4><%= @experience.name %></h4>
+            <p><%= render "rating" , experience: @experience %></p>
+            <p><%= @experience.description %></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-7">
+          <div>
+            <%= render "shared/carousel", experience: @experience %>
+          </div>
+          <div class="column-form">
+            <%= render "bookings/form", experience: @experience, booking: @booking %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-page_menu-header">
+      <div class="class-page-menu">
+        <div class="class-page-menu_wrapper">
+          <div class="class-page-menu_menu-list">
+            <a class="class-page-menu_link" href="#about">ABOUT</a>
+            <a class="class-page-menu_link" href="#exp-reviews">REVIEWS</a>
+            <a class="class-page-menu_link" href="#host">HOST</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-page_content container-fluid">
+      <div class="show-page_section">
+        <div id="about">
+        <div class="responsive-class-section">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="responsive-class-section_header">
+                <div class="responsive-class-section_title">About the class</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="responsive-class-section_content">
+                <div class="about-class-section">
+                  <p><%= @experience.description %></p>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="main-container">
   <div style="margin: auto">
     <%= render "shared/carousel", experience: @experience %>
   </div>
@@ -38,7 +104,7 @@
   </div>
 </div>
 
-<!-- code for hours and minute for @experience.duration -->
+< code for hours and minute for @experience.duration -->
 <!-- .strftime(" %l h %M min") -->
 
 <%#= render partial: 'items/index', locals: { items:Item.where(experience_id: params[:id])} %>
@@ -46,5 +112,6 @@
 <%# @experience.categories.each do |category| %>
   <!-- ⚡️ <%#= category.name %> -->
 <%# end %>
+
 
 
