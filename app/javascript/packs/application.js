@@ -42,3 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   previewImageOnFile();
 });
+
+import "controllers"
