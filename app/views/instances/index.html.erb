@@ -1,1 +1,13 @@
-<%= render "instance" %>
+<div class="main">
+  <div class="row">
+    <div class="col">
+      <%= render "form", experience: @experience, instance: Instance.new %>
+    </div>
+    <div class="col">
+      <%= render "instance" %>
+    </div>
+  </div>
+</div>
+
+
+

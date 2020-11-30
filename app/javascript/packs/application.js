@@ -28,7 +28,8 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { previewImageOnFile } from '../components/photo_apreview';
-
+import Rails from "@rails/ujs";
+window.Rails = Rails;
 
 
 // Internal imports, e.g:

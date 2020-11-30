@@ -1,5 +1,5 @@
 class InstancesController < ApplicationController
-  before_action :set_experience, only: [:new, :create]
+  before_action :set_experience, only: [:index, :new, :create]
   before_action :set_instance, only: [:show, :edit, :update, :destroy]
 
   def index
