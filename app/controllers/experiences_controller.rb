@@ -11,7 +11,8 @@ class ExperiencesController < ApplicationController
     @markers = @experiences.geocoded.map do |experience|
       {
         lat: experience.latitude,
-        lng: experience.longitude
+        lng: experience.longitude,
+        image_url: helpers.asset_url('marker.png')
       }
     end
   end

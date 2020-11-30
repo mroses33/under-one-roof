@@ -23,6 +23,15 @@
     top: 0;
 }
 
+.mapboxgl-marker {
+//   background-image: url('marker.png');
+//   background-size: cover;
+width: 50px;
+height: 50px;
+//   border-radius: 50%;
+//   cursor: pointer;
+}
+
 .map-div {
   padding-top: 24px
 }
