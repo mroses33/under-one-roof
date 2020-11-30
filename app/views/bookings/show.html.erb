@@ -12,7 +12,7 @@
           <a class="nav-link" id="supplies-tab" data-toggle="tab" href="#supplies" role="tab" aria-controls="profile" aria-selected="false">Supplies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="learn-more-tab" data-toggle="tab" href="#learn_more" role="tab" aria-controls="requests" aria-selected="false">Learn More</a>
+          <a class="nav-link" id="learn-more-tab" data-toggle="tab" href="#learn_more" role="tab" aria-controls="requests" aria-selected="false">Discover <%= @booking.experience.address %></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact Your Host</a>
@@ -23,8 +23,8 @@
     <div class="col-md-10">
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="welcome" role="tabpanel" aria-labelledby="-tab">
-          <p>Get ready for adventure!  And you don't even have to leave your
-            house!  You are <%= @booking.experience.name %> with <%= @booking.experience.host.name %>.
+          <p>Get ready for an adventure! And you don't even have to leave your
+            house! You are about to enjoy a <%= @booking.experience.name %> experience with <%= @booking.experience.host.name %>.
             All the information you need for a fantastic night in is on this page. </p>
         </div>
 
@@ -38,12 +38,34 @@
 
 
         <div class="tab-pane fade" id="learn_more" role="tabpanel" aria-labelledby="profile-tab">
-
+          <% if @booking.experience.country == "BE" %>
+            <iframe src="https://open.spotify.com/embed/playlist/7FMwWy55kP6S5mevVuc1Ok" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% elsif @booking.experience.country == "FR" %>
+            <iframe src="https://open.spotify.com/embed/playlist/0QgtRvswo2Ugn0B1MTHQkW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "GB" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSIaDfaHJHox" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "IL" %>
+            <iframe src="https://open.spotify.com/embed/playlist/1A0iRamBtLqyhPjEybm0vj" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "US" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7tfbjVrTPnV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "ES" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5Vpt0fhumU1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "IN" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3AQIJcCkXwU" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "JP" %>
+            <iframe src="https://open.spotify.com/embed/playlist/0cyH0TxFDgCQ2gQbs6shh2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "PT" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX17E3cXq3hn3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <% elsif @booking.experience.country == "IT" %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbIQnj7RRhdSX" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% else %>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX62XscWX9t6h" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% end %>
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <div class="rqr-code">
-            <p>For any inqueries - Ask the host:</p>
+            <p> Any questions? Why don't you ask the host:</p>
             <%= @svg.html_safe %>
           </div>
         </div>
