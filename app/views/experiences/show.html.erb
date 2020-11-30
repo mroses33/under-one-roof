@@ -8,14 +8,14 @@
             <p><%= render "rating" , experience: @experience %></p>
             <p><%= @experience.description %></p>
           </div>
+          <div class="column-form">
+            <%= render "bookings/form", experience: @experience, booking: @booking %>
+          </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-7">
           <div>
             <%= render "shared/carousel", experience: @experience %>
-          </div>
-          <div class="column-form">
-            <%= render "bookings/form", experience: @experience, booking: @booking %>
           </div>
         </div>
       </div>
@@ -47,9 +47,33 @@
                 <div class="about-class-section">
                   <p><%= @experience.description %></p>
                 </div>
-
               </div>
-
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-page_section">
+        <div id="about">
+        <div class="responsive-class-section">
+          <div class="exp-reviews">
+            <div class="col-12 col-md-4">
+              <div class="responsive-class-section_header">
+                <div class="responsive-class-section_title">Latest Reviews</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="responsive-class-section_content">
+                <div class="about-class-section">
+                  <div class="container reviews">
+                    <h2>Reviews</h2>
+                    <div class="review-box">
+                      <%= render "reviews" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
