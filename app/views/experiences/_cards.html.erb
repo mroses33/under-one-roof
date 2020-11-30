@@ -1,10 +1,11 @@
-<div class="cards-list d-flex flex-wrap align-content-start">
+<!-- <div class="cards-list d-flex flex-wrap align-content-start"> -->
+<div class="cards-list">
   <% @experiences.each do |experience| %>
     <%= link_to experience_path(experience) do %>
       <div class="card-trip" >
         <div class="card-photo">
           <% if experience.photos.attached? %>
-            <div class="card_image"><%= cl_image_tag experience.photos[0].key, width: 300, height: 170, crop: :fill %></div>
+            <div class="card_image"><%= cl_image_tag experience.photos[0].key, height: 170, crop: :fill %></div>
           <% else %>
             <div class="card-image"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300' %></div>
           <% end %>
