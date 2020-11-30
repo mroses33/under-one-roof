@@ -1,12 +1,71 @@
 <div class="container-fluid">
-  <div class="overview">
-    <div class="overview-details">
-      <h4><%= @experience.name %></h4>
-      <p><%= render "rating" , experience: @experience %></p>
+  <div class="overview row justify-content-between m-0">
+    <div class="overview-details col-12 col-md-6 col-lg-5 px-5">
+      <h1><%= @experience.name %></h1>
+      <p>Hosted by: <%= @experience.host.name %> </p>
+      <% if @experience.reviews.count > 0 %>
+        <p ><%= render "rating" , experience: @experience %>(<%= @experience.reviews.count %>) </p>
+      <% else %>
+        <p>no ratings yet</p>
+      <% end %>
+      <p><%= @experience.description.truncate(150) %></p>
+      <div class="overview-details-icons d-flex">
+        <p><i class="far fa-clock"></i> <%= @experience.duration %>hours</p>
+        <p><i class="fas fa-users"></i> <%= @experience.max_guests %> people</p>
+        <p><i class="fas fa-tags"></i> £ <%= @experience.price %></p>
+      </div>
+    </div>
+    <div class="overview-carousel col-12 col-md-6 col-lg-7 pr-md-5">
+      <%= render "shared/carousel", experience: @experience %>
+    </div>
+  </div>
+
+  <div class="navbar navbar-light bg-light justify-content-between px-5">
+    <div class="form-inline">
+      <a class="class-page-menu_link" href="#details">ABOUT</a>
+      <a class="class-page-menu_link" href="#supplies">SUPPLIES</a>
+      <a class="class-page-menu_link" href="#reviews">REVIEWS</a>
+      <a class="class-page-menu_link" href="#host">HOST</a>
+    </div>
+      <button class="btn btn-primary float-right" type="button">BOOK</button>
+  </div>
+
+  <div class="main-info row p-5">
+    <div class="main-info-title col-12 col-md-4" id="details">
+      <h3>All the details</h3>
+    </div>
+    <div class="main-info-content col-12 col-md-8">
       <p><%= @experience.description %></p>
     </div>
-    <div class="overview-carousel">
-      <%= render "shared/carousel", experience: @experience %>
+  </div>
+  <div class="main-info row">
+    <div class="main-info-title col-12 col-md-4" id="supplies">
+      <h3>What you'll need</h3>
+    </div>
+    <div class="main-info-content col-12 col-md-8">
+      <ul>
+        <% @experience.items.each do |item| %>
+          <li>
+            <%= item.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="main-info row ">
+    <div class="main-info-title col-12 col-md-4" id="reviews">
+      <h3>Reviews</h3>
+    </div>
+    <div class="main-info-content col-12 col-md-8">
+      <%= render "reviews" %>
+    </div>
+  </div>
+  <div class="main-info row">
+    <div class="main-info-title col-12 col-md-4" id="host">
+      <h3>About your host</h3>
+    </div>
+    <div class="main-info-content col-12 col-md-8">
+      <p><%= @experience.host.name %></p>
     </div>
   </div>
 </div>
