@@ -9,14 +9,20 @@
             <div class="card-image"><%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300' %></div>
           <% end %>
         </div>
-        <div class="card-trip-infos d-flex justify-content-center align-items-center flex-column">
-          <% if experience.host.photo.attached? %>
-            <%= cl_image_tag(experience.host.photo.key, width: 40, height: 40, class: "avatar-card dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
-          <% else %>
-            <img class="avatar-card dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%=asset_path('profile.jpg')%>" />
+        <div class="card-trip-infos d-flex justify-content-end align-items-center flex-column pb-3">
+          <div class="host-image">
+            <% if experience.host.photo.attached? %>
+              <%= cl_image_tag(experience.host.photo.key, width: 40, height: 40, class: "avatar-card dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% else %>
+              <img class="avatar-card dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%=asset_path('profile.jpg')%>" />
+            <% end %>
+            <p ><%= experience.host.name %></p>
+          </div>
+          <% if experience.kid_friendly == true %>
+            <%= image_tag "family.png", class: "kid-friendly" %>
           <% end %>
-          <p ><%= experience.host.name %></p>
-          <h2 class="mt-3"><%= experience.name %></h2>
+          <h2><%= experience.name %></h2>
+          <p><%= experience.address %> </p>
         </div>
         <div class="card-spec-info d-flex justify-content-between">
           <div class="d-flex justify-content-center align-items-center flex-column border-right w-25">
