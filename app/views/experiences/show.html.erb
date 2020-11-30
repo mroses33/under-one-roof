@@ -1,8 +1,12 @@
 <div class="container-fluid">
 <%# content_tag(:div, class: "container-fluid", id: dom_id(@experience) ) %>
   <div class="overview row justify-content-between m-0">
-    <div class="overview-details col-12 col-md-6 col-lg-5 px-5">
-      <h1><%= @experience.name %></h1>
+    <div class="overview-details col-12 col-md-6 col-lg-5 px-5 pt-4">
+      <% if current_user == @experience.host %>
+        <h1><%= @experience.name %><%= render "edit"%></h1>
+      <% else %>
+        <h1><%= @experience.name %></h1>
+      <% end %>
       <p>Hosted by: <%= @experience.host.name %> </p>
       <% if @experience.reviews.count > 0 %>
         <p ><%= render "rating" , experience: @experience %>(<%= @experience.reviews.count %>) </p>
