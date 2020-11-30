@@ -1,18 +1,34 @@
-<div class="main-container">
+<div class="container-fluid">
+  <div class="overview">
+    <div class="overview-details">
+      <h4><%= @experience.name %></h4>
+      <p><%= render "rating" , experience: @experience %></p>
+      <p><%= @experience.description %></p>
+    </div>
+    <div class="overview-carousel">
+      <%= render "shared/carousel", experience: @experience %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="main-container">
   <div style="margin: auto">
-    <%= render "shared/carousel", experience: @experience %>
+    <%#= render "shared/carousel", experience: @experience %>
   </div>
   <div class="container">
     <div class="row">
       <div class="exp-card column-left">
         <div>
-          <h4><%= @experience.name %></h4>
-          <p><%= render "rating" , experience: @experience %></p>
+          <h4><%#= @experience.name %></h4>
+          <p><%#= render "rating" , experience: @experience %></p>
           <p><%= @experience.description %></p>
         </div>
         <div class="border-bottom"></div>
         <div>
-          <h4>Hosted by <%= @experience.host.name %></h4>
+          <h4>Hosted by <%#= @experience.host.name %></h4>
           <p><i class="far fa-clock"></i> <%= @experience.duration %>h</p>
           <p><i class="fas fa-desktop"></i> Zoom meeting</p>
           <p><i class="fas fa-users"></i> <%= @experience.max_guests %></p>
@@ -20,23 +36,23 @@
          <div class="border-bottom"></div>
         <div>
           <h4>Bring with you</h4>
-          <% @experience.items.each do |item| %>
-          <%= item.amount %> - <%= item.name %>
-          <% end %>
+          <% #@experience.items.each do |item| %>
+          <%#= item.amount %> - <%#= item.name %>
+          <% #end %>
         </div>
       </div>
       <div class="column-form">
-        <%= render "bookings/form", experience: @experience, booking: @booking %>
+        <%#= render "bookings/form", experience: @experience, booking: @booking %>
       </div>
     </div>
   </div>
   <div class="container reviews">
     <h2>Reviews</h2>
     <div class="review-box">
-      <%= render "reviews" %>
+      <%#= render "reviews" %>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- code for hours and minute for @experience.duration -->
 <!-- .strftime(" %l h %M min") -->
