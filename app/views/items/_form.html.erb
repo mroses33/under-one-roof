@@ -1,7 +1,8 @@
-<%= simple_form_for [@experience, @item] do |f| %>
-            <%= f.input :amount %>
-            <%= f.input :name %>
-            <div class="form-actions">
-              <%= f.button :submit, class: "btn btn-primary" %>
-            </div>
-          <% end %>
+<%= simple_form_for([experience, item], remote: true, wrapper: :inline_form,
+  html: { class: "form-inline" },
+  wrapper_mappings: {
+    boolean: :inline_boolean
+  }) do |f| %>
+  <%= f.input :name, label: "Add supply" %>
+  <%= f.button :button, class: "btn btn-primary" %>
+<% end %>
