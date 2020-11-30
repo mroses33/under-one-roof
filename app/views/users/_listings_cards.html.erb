@@ -16,11 +16,10 @@
                 <%= link_to edit_experience_path(experience) do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
-                <%= link_to experience_path(experience), method: :delete, data: { confirm: "Are you sure you want to delete your experience? Any current bookings must be honoured." } do %>
-                  <i class="fa fa-trash destroy_plane"></i>
-                <% end %>
-              <% end %>
+                <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
+                <button id="<%= "sweet-alert-#{experience.id}" %>" class="btn btn-danger sweetalert"> <i class="fa fa-trash"></i> </button>
 
+              <% end %>
             </div>
       <% end %>
       </div>

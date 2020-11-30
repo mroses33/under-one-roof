@@ -28,8 +28,8 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { previewImageOnFile } from '../components/photo_apreview';
-
-
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { deleteSweetAlert } from '../components/delete-sweet-alert';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -41,4 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   previewImageOnFileSelect();
   previewImageOnFile();
+  deleteSweetAlert();
 });
+
+
