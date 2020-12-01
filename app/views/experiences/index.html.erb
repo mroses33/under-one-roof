@@ -16,17 +16,18 @@
         <%#= link_to 'China', experiences_path(query: params[:query], filter: 'CN'), class: "dropdown-item"  %>
       </div>
     </div>
-    <div class="d-flex">
+    <div class="d-flex flex-wrap">
       <% Category.all.each do |category| %>
         <%= link_to category.name, experiences_path(category: category.id), class: "category-tag #{'category-active' if params[:category] == category.id.to_s}"  %>
       <% end %>
     </div>
   </div>
-
-  <div class="cards-area">
-    <%= render "cards" %>
-    <div class="map-div">
-      <%= render "map" %>
+  <div class="experience-content">
+    <div class="cards-area">
+      <%= render "cards" %>
+      <div class="map-div">
+        <%= render "map" %>
+      </div>
     </div>
   </div>
   <br>
