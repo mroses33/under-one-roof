@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_122542) do
+ActiveRecord::Schema.define(version: 2020_11_30_160901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,15 @@ ActiveRecord::Schema.define(version: 2020_11_27_122542) do
     t.index ["host_id"], name: "index_experiences_on_host_id"
   end
 
+  create_table "guest_bookings", force: :cascade do |t|
+    t.bigint "booking_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_guest_bookings_on_booking_id"
+    t.index ["user_id"], name: "index_guest_bookings_on_user_id"
+  end
+
   create_table "instances", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
@@ -131,6 +140,8 @@ ActiveRecord::Schema.define(version: 2020_11_27_122542) do
   add_foreign_key "experience_categories", "categories"
   add_foreign_key "experience_categories", "experiences"
   add_foreign_key "experiences", "users", column: "host_id"
+  add_foreign_key "guest_bookings", "bookings"
+  add_foreign_key "guest_bookings", "users"
   add_foreign_key "instances", "experiences"
   add_foreign_key "items", "experiences"
   add_foreign_key "reviews", "bookings"

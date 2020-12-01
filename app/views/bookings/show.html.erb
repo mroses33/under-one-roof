@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact Your Host</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="share-tab" data-toggle="tab" href="#share" role="tab" aria-controls="share" aria-selected="false">Share your Booking</a>
+        </li>
       </ul>
     </div>
     <!-- /.col-md-4 -->
@@ -46,6 +49,22 @@
             <p>For any inqueries - Ask the host:</p>
             <%= @svg.html_safe %>
           </div>
+        </div>
+
+        <div class="tab-pane fade" id="share" role="tabpanel" aria-labelledby="share-tab">
+          <%= simple_form_for [@booking, @guest_booking] do |f| %>
+            <%= f.association :user, :collection =>  User.where.not(id: current_user.id) %>
+            <%= f.submit %>
+          <% end %>
+
+
+
+
+          <% @guest_bookings.each do |guest_booking| %>
+          <% if guest_booking.user.id == current_user.id %>
+            <%= guest_booking.user.email %>
+            <% end %>
+          <% end %>
         </div>
         <br>
       </div>
