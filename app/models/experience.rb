@@ -18,6 +18,7 @@ class Experience < ApplicationRecord
   has_many :customers, through: :bookings
   has_many :experience_categories, dependent: :destroy
   has_many :categories, through: :experience_categories
+  has_many :favorites
 
   validates :name, length: {minimum: 2}, presence: true
   validates :description, length: {minimum: 10}, presence: true

@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :bookings, class_name: "Booking", foreign_key: "customer_id"
   has_many :experiences, class_name: "Experience", foreign_key: "host_id"
+  has_many :favorites, class_name: "Favorite", foreign_key: "customer_id"
   has_one_attached :photo, dependent: :destroy
 end
