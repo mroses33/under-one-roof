@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
       {
         lat: experience.latitude,
         lng: experience.longitude,
-        image_url: helpers.asset_url('marker.png')
+        image_url: helpers.asset_url('9.png')
       }
     end
   end
