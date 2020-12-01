@@ -30,7 +30,7 @@ class Experience < ApplicationRecord
 
 
   def average_rating
-    0 if reviews.empty?
+   return 0 if reviews.empty?
     reviews.pluck(:rating).sum / reviews.count.to_i
   end
 

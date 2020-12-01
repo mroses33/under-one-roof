@@ -2,6 +2,28 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  #FOR SENDING EMAILS
+
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'www.underoneroof.fun' #replace with your own url
+  # config.action_mailer.default_url_options = { host: host }
+
+  # # SMTP settings for gmail
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :user_name            => 'georgi.ankov.GA@gmail.com',
+  #   :password             => 'asem fkze mesq slaw',
+  #   :authentication       => "plain",
+  #   :enable_starttls_auto => true
+  # }
+
+
+
+
+
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

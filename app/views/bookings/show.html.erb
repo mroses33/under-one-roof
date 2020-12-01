@@ -67,7 +67,7 @@
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <div class="rqr-code">
+          <div class="rqr-code">
             <p> Any questions? Why don't you ask the host:</p>
             <%= @svg.html_safe %>
           </div>
@@ -75,17 +75,8 @@
 
         <div class="tab-pane fade" id="share" role="tabpanel" aria-labelledby="share-tab">
           <%= simple_form_for [@booking, @guest_booking] do |f| %>
-            <%= f.association :user, :collection =>  User.where.not(id: current_user.id) %>
-            <%= f.submit %>
-          <% end %>
-
-
-
-
-          <% @guest_bookings.each do |guest_booking| %>
-          <% if guest_booking.user.id == current_user.id %>
-            <%= guest_booking.user.email %>
-            <% end %>
+            <%= f.association :user, label: "Add friend", :collection =>  User.where.not(id: current_user.id)%>
+            <%= f.submit 'Invate your Friend' %>
           <% end %>
         </div>
         <br>
