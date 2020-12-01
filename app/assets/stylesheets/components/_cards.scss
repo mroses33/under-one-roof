@@ -2,8 +2,12 @@
   z-index: 0;
   width: 100%;
   color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  // flex-grow: 1;
 }
-
 
 .card-trip {
   overflow: hidden;

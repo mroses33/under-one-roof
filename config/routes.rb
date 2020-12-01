@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :experience_categories, only: [:new, :create]
     resources :items, except: :show
+
     resources :bookings, only: [:new, :create] do
       member do
         patch :accept
@@ -22,7 +23,10 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update]
+
 end
+
+
 
 
 
