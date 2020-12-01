@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.experience = @experience
     if @item.save
-      redirect_to experience_path(@experience)
+      redirect_to experience_path(@experience, anchor: "supplies")
     else
       render :new
     end
@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.destroy
-    redirect_to experiences_index_path
+    @item.destroy
+    redirect_to experience_path(@item.experience, anchor: "supplies")
   end
 
   private

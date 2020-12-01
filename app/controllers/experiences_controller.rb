@@ -13,7 +13,8 @@ class ExperiencesController < ApplicationController
     @markers = @experiences.geocoded.map do |experience|
       {
         lat: experience.latitude,
-        lng: experience.longitude
+        lng: experience.longitude,
+        image_url: helpers.asset_url('9.png')
       }
     end
   end
@@ -59,6 +60,6 @@ class ExperiencesController < ApplicationController
   private
 
   def strong_params
-    params.require(:experience).permit(:name, :description, :price, :country, :address, :kid_friendly, :duration, :max_guests, :language, photos: [], category_ids: [])
+    params.require(:experience).permit(:name, :tagline, :description, :price, :country, :address, :kid_friendly, :duration, :max_guests, :language, photos: [], category_ids: [])
   end
 end
