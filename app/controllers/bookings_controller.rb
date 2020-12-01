@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       redirect_to user_path(current_user)
+      # redirect_to pay_experience_booking_path
     else
       render :new
     end
@@ -52,6 +53,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.update(confirmation: "Accepted")
     redirect_to user_path(current_user.id)
+  end
+
+  def pay
   end
 
   def reject
