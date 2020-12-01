@@ -5,7 +5,9 @@ class ExperiencesController < ApplicationController
       @experiences = Experience.search_experience(params[:query]).where.not(host_id: current_user.id)
       flash[:notice] = "Unfortunately, no results for #{params[:query]}" if @experiences.length.zero?
     else
-      @experiences = Experience.all.where.not(host_id: current_user.id)
+      x = Experience.all.where.not(host_id: current_user.id)
+      x = Experience.page(params[:page]).per(6)
+      @experiences = x
     end
 
     @markers = @experiences.geocoded.map do |experience|

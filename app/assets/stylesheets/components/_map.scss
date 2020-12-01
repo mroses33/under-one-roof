@@ -11,7 +11,7 @@
 
 .cards-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
   flex-grow: 1;
@@ -21,6 +21,7 @@
     height: 100vh;
     position: sticky;
     top: 0;
+    width: auto;
 }
 
 .map-div {
@@ -48,10 +49,10 @@
 
 @media (min-width: 768px) {
   .cards-list {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   #map {
-    display: none;
+    display: block;
   }
 }
 /*Medium devices (tablets, 768px and up)*/
