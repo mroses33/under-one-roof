@@ -32,6 +32,12 @@
   width: 600px;
 }
 
+ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 // .main-container {
 //   max-width: 1200px;
 //   margin: 0 auto;
