@@ -1,0 +1,8 @@
+<%= form_with model: experience, id: dom_id(experience, "inline_form") do |form| %>
+  <%= form.text_field :name %>
+  <%= form.text_field :description %>
+  <%= form.number_field :price %>
+  <%= form.text_field :address %>
+  <%= form.number_field :duration %>
+  <%= form.submit %>
+<% end %>

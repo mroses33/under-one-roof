@@ -12,7 +12,7 @@
   width: 300px;
   align-items: flex-start;
   border-radius: 10px;
-  margin: 10px;
+  margin: 10px auto;
 }
 
 
@@ -21,7 +21,7 @@
 }
 
 .card-trip-infos {
-  height: 110px;
+  height: 135px;
   position: relative;
 }
 
@@ -48,9 +48,9 @@
   text-decoration: none;
 }
 
-.card-image > img {
+.card-image img {
   height: 170px;
-  width: 300px;
+  width: 100%;
   object-fit: cover;
 }
 

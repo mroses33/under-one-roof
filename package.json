@@ -11,6 +11,11 @@
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.13.0",
     "popper.js": "^1.16.1",
+
+    "rails-erb-loader": "^5.5.2",
+
+    "sweetalert": "^2.1.2",
+
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

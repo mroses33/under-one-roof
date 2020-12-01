@@ -30,6 +30,8 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'geocoder'
 
+gem 'best_in_place'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -44,6 +46,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'kaminari'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

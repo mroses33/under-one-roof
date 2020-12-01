@@ -1,10 +1,13 @@
 <div class="container-fluid ">
     <%= render "searchbar" %>
-  <div class="cards-area d-flex ">
+  <div class="cards-area">
     <%= render "cards" %>
-    <%= render "map" %>
+    <div class="map-div">
+      <%= render "map" %>
+    </div>
   </div>
   <br>
+  <%= paginate @experiences %>
 </div>
 
 
