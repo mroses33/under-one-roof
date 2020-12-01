@@ -55,9 +55,18 @@
       <% end %>
       <ul>
         <% @experience.items.each do |item| %>
-          <li>
-            <%= item.name %>
-          </li>
+          <% if current_user == @experience.host %>
+            <li>
+              <i class="fas fa-chevron-right"></i> <%= item.name %>
+              <%= link_to item_path(item), method: :delete do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <i class="fas fa-chevron-right"></i> <%= item.name %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
@@ -93,7 +102,9 @@
       <h3>Book</h3>
     </div>
     <div class="main-info-content col-12 col-md-8">
-
+      <div class="column-form">
+        <%= render "bookings/form", experience: @experience, booking: @booking %>
+      </div>
     </div>
   </div>
 </div>
