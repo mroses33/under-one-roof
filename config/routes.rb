@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :experience_categories, only: [:new, :create]
     resources :items, except: [:destroy, :show]
+    resources :favorites, only: [:create, :destroy]
     resources :bookings, only: [:new, :create] do
       member do
         patch :accept
