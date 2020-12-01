@@ -6,6 +6,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <%= simple_form_for [ booking, review ] do |form| %>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,16 +16,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [ booking, review ] do |form| %>
+
         <%= form.input :rating %>
         <%= form.input :comment %>
-        <%= form.submit class: 'btn btn-primary' %>
-        <% end %>
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <%= form.submit class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
+  <% end %>
 </div>
