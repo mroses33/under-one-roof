@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       member do
         patch :accept
         patch :reject
+        get :pay
       end
     end
     resources :instances
