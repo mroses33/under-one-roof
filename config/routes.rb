@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :experience_categories, only: [:new, :create]
-    resources :items, except: :show
+
+    resources :items, except: [:destroy, :show]
 
     resources :bookings, only: [:new, :create] do
       member do
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:destroy]
   resources :users, only: [:show, :edit, :update]
+
+  resources :items, only: [:destroy]
 
 end
 
