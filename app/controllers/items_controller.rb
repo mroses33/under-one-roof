@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.destroy
-    redirect_to experiences_index_path
+    @item.destroy
+    redirect_to experience_path(@item.experience, anchor: "supplies")
   end
 
   private
