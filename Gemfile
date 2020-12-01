@@ -32,6 +32,8 @@ gem 'geocoder'
 
 gem 'best_in_place'
 
+gem 'turbolinks_render'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

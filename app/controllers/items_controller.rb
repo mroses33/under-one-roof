@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.experience = @experience
     if @item.save
-      redirect_to experience_path(@experience)
+      redirect_to experience_path(@experience, anchor: "supplies")
     else
       render :new
     end

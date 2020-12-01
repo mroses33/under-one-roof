@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <%# content_tag(:div, class: "container-fluid", id: dom_id(@experience) ) %>
   <div class="overview row justify-content-between m-0">
-    <div class="overview-details col-12 col-md-6 col-lg-5 px-5 pt-4">
+    <div class="overview-details col-12 col-md-6 col-lg-5 px-5 pt-5">
       <% if current_user == @experience.host %>
         <h1><%= @experience.name %><%= render "edit"%></h1>
       <% else %>
@@ -13,7 +13,7 @@
       <% else %>
         <p>no ratings yet</p>
       <% end %>
-      <p><%= @experience.description.truncate(150) %></p>
+      <p><%= @experience.tagline %></p>
       <div class="overview-details-icons d-flex">
         <p><i class="far fa-clock"></i> <%= @experience.duration %>hours</p>
         <p><i class="fas fa-users"></i> <%= @experience.max_guests %> people</p>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="navbar navbar-light bg-light justify-content-between px-5">
+  <div class="navbar navbar-light bg-light justify-content-between pl-5">
     <div class="form-inline">
       <a class="class-page-menu_link" href="#details">ABOUT</a>
       <a class="class-page-menu_link" href="#supplies">SUPPLIES</a>
@@ -74,16 +74,26 @@
     <div class="main-info-title col-12 col-md-4" id="host">
       <h3>About your host</h3>
     </div>
-    <div class="main-info-content col-12 col-md-8">
-      <p><%= @experience.host.name %></p>
+    <div class="main-info-content col-12 col-md-8 d-flex">
+      <div class="align-self-center">
+        <% if @experience.host.photo.attached? %>
+          <%= cl_image_tag(current_user.photo.key, width: 100, height: 100, class: "avatar-large") %>
+        <% else %>
+          <img class="avatar-large" src="<%=asset_path('profile.jpg')%>" />
+        <% end %>
+      </div>
+      <div class="pl-4">
+        <h6><%= @experience.host.name %></h6>
+        <p><%= @experience.host.bio %></p>
+      </div>
     </div>
   </div>
   <div class="main-info row p-5">
     <div class="main-info-title col-12 col-md-4" id="booking">
-      <h3>About your host</h3>
+      <h3>Book</h3>
     </div>
     <div class="main-info-content col-12 col-md-8">
-      <p><%= @experience.host.name %></p>
+
     </div>
   </div>
 </div>
