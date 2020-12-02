@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <br>
   <h1>Hello <strong><%= @user.name %></strong></h1>
   <hr>
@@ -58,7 +58,10 @@
         </div>
 
         <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
-          <%= render 'request_cards' %>
+
+            <h2> Booking requests: </h2>
+            <%= render 'card_request_user' %>
+
         </div>
 
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
