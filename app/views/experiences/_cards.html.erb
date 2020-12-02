@@ -1,8 +1,8 @@
 <!-- <div class="cards-list d-flex flex-wrap align-content-start"> -->
-<div class="cards-list">
+<div class="cards-list d-flex justify-content-between flex-wrap flex-grow-1 mt-4 mr-4">
   <% @experiences.each do |experience| %>
     <%= link_to experience_path(experience) do %>
-      <div class="card-trip" >
+      <div class="card-trip mb-4" >
         <div class="card-photo">
           <% if experience.photos.attached? %>
             <div class="card-image"><%= cl_image_tag experience.photos[0].key, height: 170, crop: :fill %></div>
