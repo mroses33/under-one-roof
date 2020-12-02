@@ -27,7 +27,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="-tab">
           <br>
-          <h2>About me...</h2>
+          <h2 style="margin-left:0">About me...</h2>
             <p><%= @user.bio %></p>
               <% if current_user == @user %>
 
@@ -52,9 +52,7 @@
         </div>
 
         <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
-          <% current_user.favorites.each do |favorite| %>
-            <%= favorite.experience %>
-          <% end %>
+          <%= render "favorites_cards" %>
         </div>
 
         <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
