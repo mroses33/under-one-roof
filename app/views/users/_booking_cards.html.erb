@@ -15,12 +15,12 @@
                   <% if booking.confirmation == "Rejected" %>
                     <p style="margin-bottom:0"><%= booking.experience.host.name %> is unable to complete this booking.</p>
                   <% elsif booking.confirmation == "Pending" %>
-                    <p style="margin-bottom:0">Your booking is pending.</p>
+                    <p style="margin-bottom:0", class="font-italic">Your booking is pending.</p>
                   <% end %>
                 </div>
                 <div class="d-flex flex-column">
                   <% if booking.confirmation == "Accepted" %>
-                    <%= link_to "See booking", booking_path(booking), class: "btn btn-primary" %>
+                    <%= link_to "See booking", booking_path(booking), class: "btn btn-primary", id: "btn-see-booking" %>
                   <% end %>
                 </div>
               </div>

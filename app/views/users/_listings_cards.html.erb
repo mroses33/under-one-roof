@@ -1,34 +1,39 @@
-<div class="container">
-  <div class="p-3">
+<div class="cards-booking-list">
+  <!-- <div class="p-3"> -->
     <% @experiences.each do |experience| %>
-      <div class="card-request d-flex align-items-center m-3">
+      <div class="card-listing d-flex align-items-center m-3">
         <%= link_to experience_path(experience) do %>
-          <div class="d-flex justify-content-between align-items-center">
-            <% if experience.photos.attached? %>
-              <%= cl_image_tag experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
-            <% else %>
-              <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
-            <% end %>
+        <div class="d-flex justify-content-between align-items-center">
+          <% if experience.photos.attached? %>
+            <%= cl_image_tag experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
+          <% else %>
+            <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
+          <% end %>
+            <div class='p-3'>
               <div>
-                <div class="card-info p-3">
-                  <h2> <%= experience.name %> </h2>
-                  <h2> £<%= experience.price %> </h2>
-                </div>
-                <div class="para-list">
-                  <% if experience.host_id == current_user.id %>
-                    <%= link_to edit_experience_path(experience) do %>
-                      <i class="fas fa-edit"></i>
-                    <% end %>
-                    <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
-                    <button id="<%= "sweet-alert-#{experience.id}"%>" class="btn btn-danger sweetalert"> <i class="fa fa-trash"></i> </button>
-                  <% end %>
-                </div>
+                <h3 class='ml-2'> <%= experience.name %> </h3>
+                <p class='ml-2'> £<%= experience.price %> </p>
               </div>
+              <div class="para-list confirm-request ">
+                <% if experience.host_id == current_user.id %>
+                  <div>
+                    <%#= link_to edit_experience_path(experience) do %>
+                      <!-- <i class="fas fa-edit"></i> -->
+                    <%= link_to "Edit experience", experience_path(experience), class: "btn btn-primary", id: "btn-edit-experience" %>
+
+                  </div>
+                  <div class="ml-2">
+                    <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
+                      <button id="<%= "sweet-alert-#{experience.id}"%>" class="btn btn-danger sweetalert"> <i class="far fa-trash-alt"></i></i> </button>
+                    <% end %>
+                  </div>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
     <% end %>
-  </div>
+  <!-- </div> -->
 </div>
 
 

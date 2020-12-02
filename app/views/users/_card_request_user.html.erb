@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="p-3">
+<div class="container pl-0">
+  <div class="">
     <% @experiences.each do |experience| %>
       <% experience.bookings.each do |booking| %>
         <% if booking.confirmation == "Pending" %>
-          <div class="card-request d-flex align-items-center m-3">
+          <div class="card-request d-flex align-items-center m-3 pl-0">
             <div class="d-flex justify-content-between align-items-center">
               <% if booking.experience.photos.attached? %>
                 <%= cl_image_tag booking.experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
@@ -15,8 +15,14 @@
                   <h4 style="margin-bottom:0"><%= experience.name %></h4>
                 </div>
                 <div class="confirm-request p-3">
-                  <button type="button" class="btn btn-success" id="accept-button"><%= link_to "Accept ✅", accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
-                  <button type="button" class="btn btn-danger" id="reject-button"><%= link_to "Reject 🚫", reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch %></button>
+                  <button type="button" class="btn btn-primary" id="accept-button"><%= link_to accept_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch do  %>
+                   Approve <i class="far fa-check-circle"></i>
+                  <% end %>
+                  </button>
+                  <button type="button" class="btn btn-primary" id="reject-button"><%= link_to reject_experience_booking_path(experience_id: experience.id, booking_id: booking.id), method: :patch do %>
+                    Reject  <i class="fas fa-ban"></i>
+                  <% end %>
+                  </button>
                 </div>
               </div>
             </div>
