@@ -1,0 +1,27 @@
+<% if @booking.experience.spotify_url %>
+  <%= raw @booking.experience.spotify_url %>
+<% else %>
+ <% if @booking.experience.country == "BE" %>
+   <iframe src="https://open.spotify.com/embed/playlist/7FMwWy55kP6S5mevVuc1Ok" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+ <% elsif @booking.experience.country == "FR" %>
+   <iframe src="https://open.spotify.com/embed/playlist/0QgtRvswo2Ugn0B1MTHQkW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "GB" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSIaDfaHJHox" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "IL" %>
+   <iframe src="https://open.spotify.com/embed/playlist/1A0iRamBtLqyhPjEybm0vj" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "US" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7tfbjVrTPnV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "ES" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5Vpt0fhumU1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "IN" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3AQIJcCkXwU" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "JP" %>
+   <iframe src="https://open.spotify.com/embed/playlist/0cyH0TxFDgCQ2gQbs6shh2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "PT" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX17E3cXq3hn3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<% elsif @booking.experience.country == "IT" %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbIQnj7RRhdSX" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+ <% else %>
+   <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX62XscWX9t6h" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+ <% end %>
+<% end %>

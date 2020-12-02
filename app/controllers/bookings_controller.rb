@@ -37,7 +37,6 @@ class BookingsController < ApplicationController
     )
 
     @art_info = CallMuseumData.call(@booking.experience.address)
-
   end
 
   def edit
