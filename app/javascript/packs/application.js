@@ -42,6 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   previewImageOnFile();
   deleteSweetAlert();
+
 });
-
-

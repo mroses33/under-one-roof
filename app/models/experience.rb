@@ -6,7 +6,7 @@ class Experience < ApplicationRecord
     pg_search_scope :search_experience,
              against: [:name, :address, :country],
                using: {
-                    tsearch: { prefix: true }
+                  tsearch: { prefix: true }
                       }
 
   belongs_to :host, class_name: "User"
@@ -18,6 +18,7 @@ class Experience < ApplicationRecord
   has_many :customers, through: :bookings
   has_many :experience_categories, dependent: :destroy
   has_many :categories, through: :experience_categories
+  has_many :favorites
 
   validates :name, length: {minimum: 2}, presence: true
   validates :description, length: {minimum: 10}, presence: true
@@ -30,7 +31,7 @@ class Experience < ApplicationRecord
 
 
   def average_rating
-    return 0 if reviews.empty?
+   return 0 if reviews.empty?
     reviews.pluck(:rating).sum / reviews.count.to_i
   end
 

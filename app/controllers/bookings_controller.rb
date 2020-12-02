@@ -15,13 +15,16 @@ class BookingsController < ApplicationController
     @booking.customer = @customer
 
     if @booking.save
-      redirect_to user_path(current_user)
+      redirect_to pay_experience_booking_path(@experience, @booking)
     else
       render :new
     end
   end
 
   def show
+    @guest_booking = GuestBooking.new
+    @guest_bookings = @booking.guest_bookings
+
     qrcode = RQRCode::QRCode.new("+447470043682")
 
     # NOTE: showing with default options specified explicitly
@@ -52,6 +55,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.update(confirmation: "Accepted")
     redirect_to user_path(current_user.id)
+  end
+
+  def pay
+  end
+
+  def success
   end
 
   def reject

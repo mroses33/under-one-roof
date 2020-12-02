@@ -9,6 +9,9 @@
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="true">Your Favorites</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bookings</a>
         </li>
         <li class="nav-item">
@@ -45,26 +48,29 @@
                   </div>
                   <br>
                  </div>
-                  <% end %>
+              <% end %>
+        </div>
+
+        <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
+          <% current_user.favorites.each do |favorite| %>
+            <%= favorite.experience %>
+          <% end %>
         </div>
 
         <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
 
             <h2> Booking requests: </h2>
-            <%= render 'card_request_user' %>
+            <%#= render 'card_request_user' %>
+
+          <%= render 'request_cards' %>
 
         </div>
 
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-          <h2> Your bookings: </h2>
           <%= render "booking_cards" %>
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          <br>
-          <h2>Your listings:</h2>
-          <br>
             <%= render 'listings_cards' %>
             <br>
         </div>
