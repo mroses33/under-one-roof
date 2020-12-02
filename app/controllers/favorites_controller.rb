@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 
-   def create
+  def create
     @experience = Experience.find(params[:experience_id])
     @favorite = Favorite.create(experience: @experience, customer: current_user)
     redirect_to experience_path(@experience)

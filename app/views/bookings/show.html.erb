@@ -41,6 +41,8 @@
 
 
         <div class="tab-pane fade" id="learn_more" role="tabpanel" aria-labelledby="profile-tab">
+          <%= render "museum" %>
+
           <% if @booking.experience.country == "BE" %>
             <iframe src="https://open.spotify.com/embed/playlist/7FMwWy55kP6S5mevVuc1Ok" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           <% elsif @booking.experience.country == "FR" %>

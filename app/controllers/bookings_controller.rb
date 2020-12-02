@@ -35,6 +35,9 @@ class BookingsController < ApplicationController
       module_size: 6,
       standalone: true
     )
+
+    @art_info = CallMuseumData.call(@booking.experience.address)
+
   end
 
   def edit
