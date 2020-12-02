@@ -1,26 +1,30 @@
-<div>
-  <% @experiences.each do |experience| %>
-    <div class="card-booking d-flex justify-content-between align-items-center m-3">
-      <%= link_to experience_path(experience) do %>
-        <div class="d-flex justify-content-start align-items-center">
-          <% if experience.photos.attached? %>
-            <%= cl_image_tag experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
-          <% else %>
-            <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
-          <% end %>
-            <div class="card-info p-3">
-              <h2> <%= experience.name %> </h2>
-              <h2> £<%= experience.price %> </h2>
-            </div>
-            <div class="para-list">
-              <% if experience.host_id == current_user.id %>
-                <%= link_to edit_experience_path(experience) do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
-                <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
-                <button id="<%= "sweet-alert-#{experience.id}"%>" class="btn btn-danger sweetalert"> <i class="fa fa-trash"></i> </button>
-              <% end %>
-            </div>
+<div class="container">
+  <div class="p-3">
+    <% @experiences.each do |experience| %>
+      <div class="card-request d-flex align-items-center m-3">
+        <%= link_to experience_path(experience) do %>
+          <div class="d-flex justify-content-between align-items-center">
+            <% if experience.photos.attached? %>
+              <%= cl_image_tag experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
+            <% else %>
+              <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
+            <% end %>
+              <div>
+                <div class="card-info p-3">
+                  <h2> <%= experience.name %> </h2>
+                  <h2> £<%= experience.price %> </h2>
+                </div>
+                <div class="para-list">
+                  <% if experience.host_id == current_user.id %>
+                    <%= link_to edit_experience_path(experience) do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
+                    <button id="<%= "sweet-alert-#{experience.id}"%>" class="btn btn-danger sweetalert"> <i class="fa fa-trash"></i> </button>
+                  <% end %>
+                </div>
+              </div>
+          </div>
         <% end %>
       </div>
     <% end %>
@@ -58,7 +62,7 @@
 
   <%= link_to new_experience_path do %>
   <div class="card-listing">
-    <div class="card-image_listing" id="icon-listi -->ng-ex"> <i class="fas fa-plus-square"></i>
+    <div class="card-image_listing" id="icon-listing-ex"> <i class="fas fa-plus-square"></i>
   </div>
     <div class="card-listing-infos">
           <h2> Add a new listing </h2>
