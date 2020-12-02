@@ -95,7 +95,7 @@
     <div class="main-info-content col-12 col-md-8 d-flex">
       <div class="align-self-center">
         <% if @experience.host.photo.attached? %>
-          <%= cl_image_tag(current_user.photo.key, width: 100, height: 100, class: "avatar-large") %>
+          <%= cl_image_tag(@experience.host.photo.key, width: 100, height: 100, class: "avatar-large") %>
         <% else %>
           <img class="avatar-large" src="<%=asset_path('profile.jpg')%>" />
         <% end %>
