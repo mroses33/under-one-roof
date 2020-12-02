@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
     @experiences = Experience.where(host_id: current_user.id)
     @bookings = Booking.where(customer_id: current_user.id)
+    @favorites = Favorite.where(customer_id: current_user.id)
     qrcode = RQRCode::QRCode.new("http://github.com/")
 
     # NOTE: showing with default options specified explicitly

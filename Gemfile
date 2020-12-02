@@ -26,7 +26,7 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
 gem 'best_in_place'
-gem "letter_opener", :group => :development
+gem "letter_opener"
 gem 'turbolinks_render'
 
 
