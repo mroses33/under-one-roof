@@ -1,0 +1,11 @@
+.experience-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .experience-content {
+    margin-left: 50px;
+  }
+}
