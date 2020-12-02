@@ -66,6 +66,9 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path
   end
 
+
+
+
   private
 
   def strong_params

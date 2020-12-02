@@ -8,11 +8,12 @@ Rails.application.routes.draw do
     resources :experience_categories, only: [:new, :create]
 
     resources :items, except: [:destroy, :show]
-
+    resources :favorites, only: [:create, :destroy]
     resources :bookings, only: [:new, :create] do
       member do
         patch :accept
         patch :reject
+        get :pay
       end
     end
     resources :instances
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:destroy, :show, :edit, :update] do
     resources :reviews, only: [:create, :new]
+    resources :guest_bookings, only: [:create, :new]
   end
 
   resources :reviews, only: [:destroy]

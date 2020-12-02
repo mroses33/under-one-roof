@@ -8,6 +8,15 @@
         <h1><%= @experience.name %></h1>
       <% end %>
       <p>Hosted by: <%= @experience.host.name %> </p>
+      <% if Favorite.where(experience: @experience, customer: current_user).exists? %>
+          <%= link_to experience_favorite_path(@experience), method: :delete do %>
+            <i class="fas fa-heart"></i><p>Favorited!</p>
+          <% end %>
+      <% else %>
+        <%= link_to experience_favorites_path(@experience), method: :post do %>
+          <i class="far fa-heart"></i><p>Save to favorites</p>
+        <% end %>
+      <% end %>
       <% if @experience.reviews.count > 0 %>
         <p ><%= render "rating" , experience: @experience %>(<%= @experience.reviews.count %>) </p>
       <% else %>
