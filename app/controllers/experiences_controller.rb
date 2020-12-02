@@ -24,6 +24,12 @@ class ExperiencesController < ApplicationController
         image_url: helpers.asset_url('9.png')
       }
     end
+
+    @countries=[]
+    @experiences.each do |experience|
+      @countries << experience.country
+    end
+    @countries.uniq!
   end
 
   def show
