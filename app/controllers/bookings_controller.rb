@@ -58,9 +58,13 @@ class BookingsController < ApplicationController
   end
 
   def pay
+    @booking = Booking.find(params[:id])
+    @experience = Experience.find(params[:experience_id])
   end
 
   def success
+    @booking = Booking.find(params[:id])
+    @experience = Experience.find(params[:experience_id])
   end
 
   def reject
