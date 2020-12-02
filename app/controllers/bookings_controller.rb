@@ -60,6 +60,9 @@ class BookingsController < ApplicationController
   def pay
   end
 
+  def success
+  end
+
   def reject
     @booking = Booking.find(params[:booking_id])
     @booking.update(confirmation: "Rejected")

@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_12_01_155945) do
-
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +83,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_155945) do
     t.string "tagline"
     t.index ["host_id"], name: "index_experiences_on_host_id"
   end
-
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "experience_id", null: false

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         patch :accept
         patch :reject
         get :pay
+        get :success
       end
     end
     resources :instances
