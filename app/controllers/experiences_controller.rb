@@ -1,13 +1,12 @@
 class ExperiencesController < ApplicationController
   def index
-
     if params[:query].present?
       @experiences = Experience.search_experience(params[:query]).where.not(host_id: current_user.id)
       flash[:notice] = "Unfortunately, no results for #{params[:query]}" if @experiences.length.zero?
     elsif params[:category].present?
       category_id = params[:category].to_i
-      @experiences = Experience.where(id: ExperienceCategory.where(category_id: category_id).pluck(:experience_id).uniq)
-
+      y = Experience.where(id: ExperienceCategory.where(category_id: category_id).pluck(:experience_id).uniq)
+      @experiences = y.page(params[:page]).per(6)
     else
       x = Experience.all.where.not(host_id: current_user.id)
       x = Experience.page(params[:page]).per(6)
@@ -25,7 +24,6 @@ class ExperiencesController < ApplicationController
         image_url: helpers.asset_url('9.png')
       }
     end
-
   end
 
   def show
@@ -63,11 +61,8 @@ class ExperiencesController < ApplicationController
   def destroy
     experience = Experience.find(params[:id])
     experience.destroy
-    redirect_to experiences_path
+    redirect_to user_path(current_user.id)
   end
-
-
-
 
   private
 
