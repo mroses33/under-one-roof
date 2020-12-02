@@ -25,7 +25,7 @@ class ExperiencesController < ApplicationController
       }
     end
 
-    @countries=[]
+    @countries = []
     @experiences.each do |experience|
       @countries << experience.country
     end
