@@ -6,8 +6,8 @@
     <p>Get ready for an adventure! And you don't even have to leave your
         house! You are about to enjoy a <%= @booking.experience.name %> experience with <%= @booking.experience.host.name %>.
         All the information you need for a fantastic night in is on this page. </p>
-    <p> Your booking with <%= @booking.experience.host.name %> is scheduled for <%= @booking.start_time.strftime("%A, %B %d") %> at <%= @booking.start_time.strftime("%I %p") %>. </p>
-    <p> Your Zoom link will appear <strong> here </strong> on the day of your experience. </p>
+    <p> Your experience with <%= @booking.experience.host.name %> will take place on <%= @booking.start_time.strftime("%A, %B %d") %> at <%= @booking.start_time.strftime("%I %p") %>. </p>
+    <p> Your Zoom link will be available <strong> here </strong> on the day of your experience. </p>
   </div>
     <div class="supplies">
       <h2> Everything you'll need: </h2>
