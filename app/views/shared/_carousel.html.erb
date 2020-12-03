@@ -4,7 +4,7 @@
       <% experience.photos.each_with_index do |photo, i| %>
 
       <div class="carousel-item <%= 'active' if i==0 %>">
-        <%= cl_image_tag photo.key, height: 350, crop: :fill, class: "picture"  %>
+        <%= cl_image_tag photo.key, crop: :fill, class: "picture"  %>
       </div>
 
       <% end %>
