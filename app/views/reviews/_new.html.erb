@@ -1,11 +1,11 @@
 
 <!-- Button trigger modal -->
-<a data-toggle="modal" data-target="#exampleModal" id="review-modal">
+<a data-toggle="modal" data-target="#exampleModal-<%= booking.id %>" id="review-modal">
   <%= image_tag "review.svg", width: 40, height: 40 %>
 </a>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal-<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
      <%= simple_form_for [ booking, review ] do |form| %>
     <div class="modal-content">
