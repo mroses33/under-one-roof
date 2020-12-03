@@ -38,7 +38,7 @@
   color: white !important;
 }
 
-.listing-delete-button {
+#listing-delete-button {
   text-decoration: none;
   opacity: 0.9;
   margin-left: 10px;
@@ -53,6 +53,18 @@
   // width: 136px;
   font-family: Poppins;
   color: white !important;
+}
+
+#btn-new-exp {
+  text-decoration: none;
+  opacity: 0.9;
+  margin-left: 10px;
+  font-family: Poppins;
+  color: white !important;
+}
+
+#btn-new-exp a {
+  color: white;
 }
 // .card-listing .card-trip-infos {
 //   padding: 5px;

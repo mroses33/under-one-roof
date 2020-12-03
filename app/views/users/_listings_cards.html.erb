@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-start">
   <div><h2>Your Listing</h2></div>
   <div class="pl-3">
-    <div class="btn btn-primary btn-edit-exp">
+    <div class="btn btn-primary" id="btn-new-exp">
       <%= link_to new_experience_path do %>
        Add a new listing <i class="fas fa-plus-square"></i>
     </div>
@@ -27,14 +27,13 @@
             </div>
             <div class="d-flex">
               <% if experience.host_id == current_user.id %>
-                  <button type="button" class="btn btn-primary" id="listing-edit-button"><%= link_to experience_path(experience) do  %>
-                   Edit  <i class="far fa-edit"></i>
+                  <%= link_to experience_path(experience), class:"btn btn-primary", id:"listing-edit-button" do %>
+                    Edit <i class="far fa-edit"></i>
                   <% end %>
-                  </button>
 
-                  <div class="ml-2">
+                  <div class="ml-2" id="listing-delete-button">
                   <%= link_to "Delete", experience_path(experience), method: :delete, id: "sweet-alert-#{experience.id}-delete", class: "hidden d-none" %>
-                    <button id="<%= "sweet-alert-#{experience.id}" %>" class="btn btn-primary listing-delete-button sweetalert"> Delete  <i class="far fa-trash-alt"></i></i> </button>
+                    <button id="<%= "sweet-alert-#{experience.id}" %>" class="btn btn-primary sweetalert delete-btn"> Delete  <i class="far fa-trash-alt"></i> </button>
                   <% end %>
                 </div>
             </div>
