@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     @experience = @booking.experience
     if @review.save
-      redirect_to experiences_path(@review.booking.experience.id)
+      redirect_to experience_path(@review.booking.experience.id)
     else
       render :new
     end
