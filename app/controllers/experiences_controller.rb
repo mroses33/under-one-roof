@@ -14,7 +14,7 @@ class ExperiencesController < ApplicationController
     end
 
     if params[:filter].present?
-      @experiences = @experiences.where(country: params[:filter])
+      @experiences = @experiences.where(country: params[:filter].upcase)
     end
 
     @markers = @experiences.geocoded.map do |experience|
@@ -27,10 +27,10 @@ class ExperiencesController < ApplicationController
 
     @countries = []
     Experience.all.each do |experience|
-      @countries << ISO3166::Country[experience.country]
+      @countries << experience.country
     end
     @countries.uniq!
-    @countries.sort!
+    #@countries.sort!
   end
 
   def show
