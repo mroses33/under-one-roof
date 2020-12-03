@@ -30,7 +30,6 @@
         <div class="share-booking">
           <%= simple_form_for [@booking, @guest_booking] do |f| %>
             <%= f.association :user, label: "Add friend", :collection =>  User.where.not(id: current_user.id)%>
-
             <%= f.button :submit, 'Send invite', class: "btn-submit-friend" %>
           <% end %>
         </div>
