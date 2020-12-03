@@ -10,12 +10,12 @@
       <p>Hosted by: <%= @experience.host.name %> </p>
       <% if current_user != @experience.host %>
         <% if Favorite.where(experience: @experience, customer: current_user).exists? %>
-            <%= link_to experience_favorite_path(@experience), method: :delete do %>
-              <i class="fas fa-heart"></i><p>Favorited!</p>
+            <%= link_to experience_favorite_path(@experience), class: "fav-a-pnk", method: :delete do %>
+              <p id="fav-a-pnk"><i class="fas fa-heart"></i> Favorited!</p>
             <% end %>
         <% else %>
-          <%= link_to experience_favorites_path(@experience), method: :post do %>
-            <i class="far fa-heart"></i><p>Save to favorites</p>
+          <%= link_to experience_favorites_path(@experience), class: "fav-a-pnk", method: :post do %>
+            <p id="fav-a-pnk"><i class="far fa-heart"></i> Save to favorites</p>
           <% end %>
         <% end %>
       <% end %>
