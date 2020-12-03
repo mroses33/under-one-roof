@@ -26,10 +26,11 @@ class ExperiencesController < ApplicationController
     end
 
     @countries = []
-    @experiences.each do |experience|
+    Experience.all.each do |experience|
       @countries << experience.country
     end
     @countries.uniq!
+    @countries.sort!
   end
 
   def show
