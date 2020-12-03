@@ -20,7 +20,7 @@
         <% end %>
       <% end %>
       <% if @experience.reviews.count > 0 %>
-        <p ><%= render "rating" , experience: @experience %>(<%= @experience.reviews.count %>) </p>
+        <p ><%= render "rating" , experience: @experience %> </p>
       <% else %>
         <p>no ratings yet</p>
       <% end %>
