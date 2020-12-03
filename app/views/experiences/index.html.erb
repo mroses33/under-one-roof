@@ -8,7 +8,7 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <% @countries.each do |country| %>
-          <%= link_to country, experiences_path(query: params[:query], filter: country), class: "dropdown-item"  %>
+          <%= link_to ISO3166::Country[country], experiences_path(query: params[:query], filter: country), class: "dropdown-item"  %>
         <% end %>
       </div>
     </div>
