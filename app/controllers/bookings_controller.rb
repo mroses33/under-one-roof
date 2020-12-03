@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @guest_booking = GuestBooking.new
     @guest_bookings = @booking.guest_bookings
 
-    qrcode = RQRCode::QRCode.new("+447470043682")
+    qrcode = RQRCode::QRCode.new("https://wa.me/+447470043682")
 
     # NOTE: showing with default options specified explicitly
     @svg = qrcode.as_svg(
