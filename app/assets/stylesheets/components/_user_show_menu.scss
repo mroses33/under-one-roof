@@ -13,7 +13,27 @@
 
 }
 
+.btn-primary:active {
+  background-color: #ffcdb2 !important;
+  border-color: #ffcdb2 !important;
+
+}
+
 .nav-item:hover {
   text-decoration: none;
   color: black;
+}
+
+// about me section
+.edit-bio {
+  width: 400px;
+}
+
+.bio-column {
+  width: 500px;
+  border-right: 1px solid #FFBD59;
+}
+
+.delete-btn {
+  width: 110px;
 }

@@ -8,6 +8,10 @@
   flex-grow: 0;
 }
 
+.nav-item {
+  width: 200px;
+}
+
 .logo img {
   width: 120px;
   margin: 10px 0px 0 0;
@@ -40,6 +44,9 @@ ul {
   padding-inline-start: 0;
 }
 
+li {
+  font-family: Poppins;
+}
 .nav-link {
   color: $black;
   margin: 0 15px;
@@ -48,4 +55,10 @@ ul {
 ol, ul, dl {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
 }

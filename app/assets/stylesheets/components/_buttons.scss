@@ -1,3 +1,7 @@
+a:hover {
+  color: black;
+}
+
 .btn-banner {
   color: black;
   padding: 8px 24px;
@@ -5,6 +9,7 @@
   background: #FFBD59;
   transition: background 0.3s ease;
   border: 1px solid #4A4A4A;
+  font-family: 'Poppins';
 }
 
 .btn-banner:hover {
@@ -19,6 +24,7 @@
   background-color: #FF9D0A !important;
   border-radius: 5px;
   width: 100%;
+  font-family: 'Poppins';
 }
 
 
@@ -27,6 +33,40 @@
   background-color: #F59300 !important;
 }
 
+// button styling for index page
+.btn-dropdown {
+  background-color: #ffbd59 !important;
+  color: white !important;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 120px;
+  padding: 5px 15px;
+  font-family: 'Poppins';
+}
+
+.btn-category-tag {
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 45px;
+  border: 1px solid #ffbd59;
+  color: #ffbd59 !important;
+  opacity: 0.7;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  font-weight:bold;
+  font-family: 'Poppins';
+}
+
+.btn-category-tag:hover {
+  text-decoration: none;
+  // max-height: 50px;
+}
+
+.btn-category-active {
+  background-color: #ffbd59 !important;
+  color: white !important;
+  border: 1px solid white;
+}
 
 // #f94144
 // #DA7F27

@@ -6,6 +6,8 @@
     <p>Get ready for an adventure! And you don't even have to leave your
         house! You are about to enjoy a <%= @booking.experience.name %> experience with <%= @booking.experience.host.name %>.
         All the information you need for a fantastic night in is on this page. </p>
+    <p> Your booking with <%= @booking.experience.host.name %> is scheduled for <%= @booking.start_time.strftime("%A, %B %d") %> at <%= @booking.start_time.strftime("%I %p") %>. </p>
+    <p> Your Zoom link will appear <strong> here </strong> on the day of your experience. </p>
   </div>
     <div class="supplies">
       <h2> Everything you'll need: </h2>
@@ -19,14 +21,16 @@
       <%= render "museum" %>
       <%= render "spotify" %>
       <div class="rqr-code">
-        <p> Any questions? Why don't you ask the host:</p>
+         <h2> Questions? </h2>
+        <p id="qrc-host-color"> Scan the QR code below. </p>
         <%= @svg.html_safe %>
+
       </div>
     </div>
         <div class="share-booking">
           <%= simple_form_for [@booking, @guest_booking] do |f| %>
             <%= f.association :user, label: "Add friend", :collection =>  User.where.not(id: current_user.id)%>
-            <%= f.submit 'Send invite' %>
+            <%= f.button :submit, 'Send invite', class: "btn-submit-friend" %>
           <% end %>
         </div>
     <br>
