@@ -14,8 +14,11 @@
         <div>
           <div class="request-title">
             <h4 style="margin-bottom:0"><%= link_to favorite.experience.name, experience_path(favorite.experience) %></h4>
-            <p style="margin-bottom:0"><%= favorite.experience.host.name %></p>
-            <p style="margin-bottom:0"><%= favorite.experience.duration %> hours</p>
+            <!-- <p style="margin-bottom:0"><%= favorite.experience.host.name %></p> -->
+            <!-- <p style="margin-bottom:0"><%= favorite.experience.duration %> hours</p> -->
+          </div>
+          <div div class="confirm-request p-3">
+          <%= link_to "See experience", experience_path(favorite.experience), class:"btn btn-primary", id:"favorite-see-button" %>
           </div>
         </div>
       </div>
