@@ -6,12 +6,13 @@ class ExperiencesController < ApplicationController
     elsif params[:category].present?
       category_id = params[:category].to_i
       y = Experience.where(id: ExperienceCategory.where(category_id: category_id).pluck(:experience_id).uniq)
-      @experiences = y.page(params[:page]).per(6)
+      @experiences = y
     else
       x = Experience.all.where.not(host_id: current_user.id)
-      x = Experience.page(params[:page]).per(6)
+      # x = Experience.page(params[:page]).per(6)
       @experiences = x
     end
+    @experiences = @experiences.page(params[:page]).per(6)
 
     if params[:filter].present?
       @experiences = @experiences.where(country: params[:filter].upcase)
