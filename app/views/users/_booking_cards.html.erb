@@ -1,5 +1,5 @@
 <div>
-  <h2>YOUR BOOKINGS</h2>
+  <h2>Your Bookings</h2>
 </div>
 
 <div class="cards-booking-list">
@@ -14,7 +14,7 @@
           <div class="card-info p-3">
             <h3 style="margin-bottom:0"> <%= booking.experience.name %> </h3>
             <p style="margin-bottom:0"><%#= booking.date.strftime("%B %d, %Y") %>  </p>
-            <p style="margin-bottom:0"><%= booking.experience.duration %> hours </p>
+            <!-- <p style="margin-bottom:0"><%= booking.experience.duration %> hours </p> -->
               <div class="confirm">
                 <% if booking.confirmation == "Rejected" %>
                   <p style="margin-bottom:0"><%= booking.experience.host.name %> is unable to complete this booking.</p>
