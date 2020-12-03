@@ -8,8 +8,9 @@ class ReviewsController < ApplicationController
     @review = Review.new(strong_params)
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
+    @experience = @booking.experience
     if @review.save
-      redirect_to booking_path(@review.booking.id)
+      redirect_to experience_path(@review.booking.experience.id)
     else
       render :new
     end
