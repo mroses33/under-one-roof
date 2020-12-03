@@ -27,7 +27,7 @@ class ExperiencesController < ApplicationController
 
     @countries = []
     Experience.all.each do |experience|
-      @countries << experience.country
+      @countries << ISO3166::Country[experience.country]
     end
     @countries.uniq!
     @countries.sort!
