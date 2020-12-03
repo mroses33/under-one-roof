@@ -14,7 +14,7 @@ class ExperiencesController < ApplicationController
     end
 
     if params[:filter].present?
-      @experiences = @experiences.where(country: params[:filter])
+      @experiences = @experiences.where(country: params[:filter].upcase)
     end
 
     @markers = @experiences.geocoded.map do |experience|
