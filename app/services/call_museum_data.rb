@@ -3,7 +3,7 @@ require 'open-uri'
 
 class CallMuseumData
   def self.call(param)
-    url = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=#{param}&showOnly=withImage&q=painting"
+    url = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=#{param}&showOnly=withImage&q=painting&sortBy=Relevance"
     data = JSON.parse(open(url).read)
     art = data["objectIDs"][0]
 
