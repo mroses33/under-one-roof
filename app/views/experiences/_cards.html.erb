@@ -22,8 +22,11 @@
           <% if experience.kid_friendly == true %>
             <%= image_tag "family.png", class: "kid-friendly" %>
           <% end %>
-          <h2><%= experience.name %></h2>
-          <p><%= experience.address %> </p>
+
+          <div class="align-middle">
+            <h2><%= experience.name %></h2>
+            <p><%= experience.address %> </p>
+          </div>
         </div>
         <div class="card-spec-info d-flex justify-content-between">
           <div class="d-flex justify-content-center align-items-center flex-column border-right w-25">

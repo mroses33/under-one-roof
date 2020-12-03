@@ -18,10 +18,19 @@
 
 #pay-success-div {
   margin: 70px;
+  margin-left: 400px;
+  margin-right: 400px;
   padding: 40px;
   background-color: white;
-  border: solid 1px gray;
-  border-radius: 2px;
+  border: solid 1px white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#pay-success-buttons {
+  width: 200px;
+  margin: 10px;
+  font-weight: bold;
 }
 
 

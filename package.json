@@ -9,13 +9,11 @@
     "bootstrap": "^4.5.3",
     "flatpickr": "^4.6.6",
     "jquery": "^3.5.1",
+    "jquery-bar-rating": "^1.2.2",
     "mapbox-gl": "^1.13.0",
     "popper.js": "^1.16.1",
-
     "rails-erb-loader": "^5.5.2",
-
     "sweetalert": "^2.1.2",
-
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

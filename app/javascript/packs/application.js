@@ -30,6 +30,8 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { previewImageOnFile } from '../components/photo_apreview';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { deleteSweetAlert } from '../components/delete-sweet-alert';
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,6 +39,7 @@ import { deleteSweetAlert } from '../components/delete-sweet-alert';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initStarRating();
   initFlatpickr();
   initMapbox();
   previewImageOnFileSelect();
