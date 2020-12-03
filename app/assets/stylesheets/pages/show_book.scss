@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+
 .supplies {
   padding: 30px;
   margin-top: 30px;
-  border: 2px solid #ffcdb2;
+  border: 1px solid white;
   background-color: white;
 }
 
@@ -26,8 +28,7 @@
   margin-top: 30px;
   border: 1px solid white;
   background-color: white;
-    width: 33%;
-
+  width: 33%;
 }
 
 .share-booking {
@@ -41,3 +42,29 @@
 .show-booking-display-flex {
   display: flex;
 }
+
+.btn-submit-friend {
+  width: 100%;
+  background-color: #FF9D0A;
+  color: white;
+}
+
+.btn-submit-friend:hover {
+  background-color: #FF9D0A;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#art-tag-para {
+  color: #ef476f;
+  font-size: 20px;
+
+}
+
+#qrc-host-color {
+  color: #ef476f;
+  font-size: 20px;
+
+}
+
