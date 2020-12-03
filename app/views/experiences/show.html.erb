@@ -8,13 +8,15 @@
         <h1><%= @experience.name %></h1>
       <% end %>
       <p>Hosted by: <%= @experience.host.name %> </p>
-      <% if Favorite.where(experience: @experience, customer: current_user).exists? %>
-          <%= link_to experience_favorite_path(@experience), method: :delete do %>
-            <i class="fas fa-heart"></i><p>Favorited!</p>
+      <% if current_user != @experience.host %>
+        <% if Favorite.where(experience: @experience, customer: current_user).exists? %>
+            <%= link_to experience_favorite_path(@experience), method: :delete do %>
+              <i class="fas fa-heart"></i><p>Favorited!</p>
+            <% end %>
+        <% else %>
+          <%= link_to experience_favorites_path(@experience), method: :post do %>
+            <i class="far fa-heart"></i><p>Save to favorites</p>
           <% end %>
-      <% else %>
-        <%= link_to experience_favorites_path(@experience), method: :post do %>
-          <i class="far fa-heart"></i><p>Save to favorites</p>
         <% end %>
       <% end %>
       <% if @experience.reviews.count > 0 %>
@@ -41,9 +43,11 @@
       <a class="class-page-menu_link" href="#reviews">REVIEWS</a>
       <a class="class-page-menu_link" href="#host">HOST</a>
     </div>
+    <% if current_user != @experience.host %>
       <a href="#booking">
         <button class="btn btn-primary float-right" type="button">BOOK</button>
       </a>
+    <% end %>
   </div>
 
   <div class="main-info row p-5">
@@ -66,7 +70,7 @@
         <% @experience.items.each do |item| %>
           <% if current_user == @experience.host %>
             <li>
-              <i class="fas fa-chevron-right"></i> <%= item.name %>
+              ✦ <%= item.name %>
               <%= link_to item_path(item), method: :delete do %>
                 <i class="fas fa-times"></i>
               <% end %>
@@ -106,16 +110,18 @@
       </div>
     </div>
   </div>
-  <div class="main-info row p-5">
-    <div class="main-info-title col-12 col-md-4" id="booking">
-      <h3>Book</h3>
-    </div>
-    <div class="main-info-content col-12 col-md-8">
-      <div class="column-form">
-        <%= render "bookings/form", experience: @experience, booking: @booking %>
+  <% if current_user != @experience.host %>
+    <div class="main-info row p-5">
+      <div class="main-info-title col-12 col-md-4" id="booking">
+        <h3>Book</h3>
       </div>
+        <div class="main-info-content col-12 col-md-8">
+          <div class="column-form">
+            <%= render "bookings/form", experience: @experience, booking: @booking %>
+          </div>
+        </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 
