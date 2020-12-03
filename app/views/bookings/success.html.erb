@@ -3,5 +3,5 @@
   <br>
   <p> Your payment was successful. Your booking is now pending host approval. </p>
   <p> Your confirmation number is <strong> #<%= @booking.id  %><%= @experience.id %></strong>. </p>
-  <p>  <%= link_to 'Click here to go to your user page', user_path(current_user.id) %> or <%= link_to 'See more experiences', experiences_path %></p>
+  <p>  <%= link_to 'Go to user page', user_path(current_user.id), class:"btn btn-primary", id:"pay-success-buttons" %>  <%= link_to 'See more experiences', experiences_path, class:"btn btn-primary", id:"pay-success-buttons" %></p>
 </div>
