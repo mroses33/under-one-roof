@@ -35,7 +35,7 @@ a:hover {
 
 // button styling for index page
 .btn-dropdown {
-  background-color: #ffbd59 !important;
+  background-color: #ffcdb2 !important;
   color: white !important;
   border: 1px solid white;
   border-radius: 5px;
@@ -49,11 +49,11 @@ a:hover {
   padding: 5px 15px;
   margin: 5px;
   border-radius: 45px;
-  border: 1px solid #ffbd59;
-  color: #ffbd59 !important;
+  border: 2px solid #ffcdb2 ;
+  color: black !important;
   opacity: 0.7;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  font-weight:bold;
+  // font-weight:bold;
   font-family: 'Poppins';
 }
 
@@ -63,7 +63,7 @@ a:hover {
 }
 
 .btn-category-active {
-  background-color: #ffbd59 !important;
+  background-color: #ffcdb2 !important;
   color: white !important;
   border: 1px solid white;
 }
