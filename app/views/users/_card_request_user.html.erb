@@ -1,5 +1,9 @@
-<div class="container pl-0">
-  <div class="">
+<div>
+  <h2>Booking Requests</h2>
+</div>
+
+<div class="cards-booking-list">
+  <!-- <div class=""> -->
     <% @experiences.each do |experience| %>
       <% experience.bookings.each do |booking| %>
         <% if booking.confirmation == "Pending" %>
@@ -30,5 +34,5 @@
         <% end %>
       <% end %>
     <% end %>
-  </div>
+  <!-- </div> -->
 </div>

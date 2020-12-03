@@ -1,22 +1,24 @@
-<div class="container pl-0">
-  <div class="">
-    <% @favorites.each do |favorite| %>
-          <div class="card-request d-flex align-items-center m-3 pl-0">
-            <div class="d-flex justify-content-between align-items-center">
-              <% if favorite.experience.photos.attached? %>
-                <%= cl_image_tag favorite.experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
-              <% else %>
-                <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
-              <% end %>
-              <div>
-                <div class="request-title">
-                  <h4 style="margin-bottom:0"><%= link_to favorite.experience.name, experience_path(favorite.experience) %></h4>
-                  <p style="margin-bottom:0"><%= favorite.experience.host.name %></p>
-                  <p style="margin-bottom:0"><%= favorite.experience.duration %> hours</p>
-                </div>
-              </div>
-            </div>
+<div>
+  <h2>Your Favourites</h2>
+</div>
+
+<div class="cards-booking-list">
+  <% @favorites.each do |favorite| %>
+    <div class="card-request d-flex align-items-center m-3 pl-0">
+      <div class="d-flex justify-content-between align-items-center">
+        <% if favorite.experience.photos.attached? %>
+          <%= cl_image_tag favorite.experience.photos[0].key, width: 200, height: 150, crop: :fill, class: "booking-image" %>
+        <% else %>
+          <%= image_tag 'https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150&w=200', class: "booking-image" %>
+        <% end %>
+        <div>
+          <div class="request-title">
+            <h4 style="margin-bottom:0"><%= link_to favorite.experience.name, experience_path(favorite.experience) %></h4>
+            <p style="margin-bottom:0"><%= favorite.experience.host.name %></p>
+            <p style="margin-bottom:0"><%= favorite.experience.duration %> hours</p>
           </div>
-    <% end %>
-  </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
