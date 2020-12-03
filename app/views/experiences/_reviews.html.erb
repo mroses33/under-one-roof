@@ -6,11 +6,13 @@
                             <span>⭐️</span>
                             <% end %>
               </h5>
+              <% if review.booking.customer_id == current_user.id %>
               <small><%= link_to '❌',
                review_path(review.id),
                method: :delete,
                data: { confirm: 'Are you sure?' }  %>
               </small>
+              <% end %>
             </div>
             <p class="mb-1"><%= review.comment %></p>
             <div class="text-right">

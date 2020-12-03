@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@review.booking.id)
+      redirect_to experiences_path(@review.booking.experience.id)
     else
       render :new
     end
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to booking_path(@review.booking.id)
+    redirect_to experiences_path(@review.booking.id)
   end
 
   private
