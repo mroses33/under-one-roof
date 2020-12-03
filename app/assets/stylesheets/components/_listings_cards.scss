@@ -22,10 +22,6 @@
   // position: absolute;
 }
 
-.para-list a:hover {
-  color: #DA7F27;
-  transition: 0.5s;
-}
 
 .booking-image {
   height: 150px;
@@ -33,6 +29,43 @@
   border-radius: 10px 0 0 10px;
 }
 
+#listing-edit-button {
+  text-decoration: none;
+  opacity: 0.9;
+  margin-left: 10px;
+  width: 115px;
+  font-family: Poppins;
+  color: white !important;
+}
+
+#listing-delete-button {
+  text-decoration: none;
+  opacity: 0.9;
+  margin-left: 10px;
+  width: 115px;
+  font-family: Poppins;
+}
+
+.btn-edit-exp {
+  text-decoration: none;
+  opacity: 0.9;
+  // margin-left: 10px;
+  // width: 136px;
+  font-family: Poppins;
+  color: white !important;
+}
+
+#btn-new-exp {
+  text-decoration: none;
+  opacity: 0.9;
+  margin-left: 10px;
+  font-family: Poppins;
+  color: white !important;
+}
+
+#btn-new-exp a {
+  color: white;
+}
 // .card-listing .card-trip-infos {
 //   padding: 5px;
 // }

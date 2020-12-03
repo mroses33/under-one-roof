@@ -1,7 +1,9 @@
 
 <div id='experience-booking-dates' data-unavailable="<%= @experience.unavailable_dates.to_json %>">
        <%= simple_form_for([experience, booking]) do |f| %>
-           <%= f.input :start_time, label: "Book a date:", as: :string, type: :text %>
-           <%= f.button :submit, class: "btn btn-primary", id: "button-booking" %>
+        <%= f.input :start_time, label: "Book a date:", as: :string, type: :text %>
+          <div class="form-actions">
+            <%= f.button :submit, class: "btn btn-primary", id: "button-booking" %>
+          </div>
         <% end %>
  </div>

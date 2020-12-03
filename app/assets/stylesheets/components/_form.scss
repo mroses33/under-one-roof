@@ -1,5 +1,5 @@
 .simple_form {
-  padding: 50px;
+  padding: 40px;
   border-radius: 20px;
   background-color: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -193,3 +193,10 @@ select {
   padding: 5px;
 }
 
+.form-actions {
+  text-align: center;
+}
+
+#new-booking {
+  width: 500px
+}

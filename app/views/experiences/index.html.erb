@@ -3,7 +3,7 @@
 
   <div class="d-flex justify-content-between mx-3">
     <div class="dropdown country-tag">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn-dropdown dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Country
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -17,7 +17,7 @@
     </div>
     <div class="d-flex flex-wrap">
       <% Category.all.each do |category| %>
-        <%= link_to category.name, experiences_path(category: category.id), class: "category-tag #{'category-active' if params[:category] == category.id.to_s}"  %>
+        <%= link_to category.name, experiences_path(category: category.id), class: "btn-category-tag #{'btn-category-active' if params[:category] == category.id.to_s}"  %>
       <% end %>
     </div>
   </div>
@@ -26,6 +26,9 @@
       <%= render "map" %>
   </div>
   <br>
-  <%# paginate @experiences %>
+
+
+<%= paginate @experiences %>
+
 </div>
 

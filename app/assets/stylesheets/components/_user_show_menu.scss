@@ -13,7 +13,40 @@
 
 }
 
+.btn-primary:active {
+  background-color: #ffcdb2 !important;
+  border-color: #ffcdb2 !important;
+
+}
+
 .nav-item:hover {
   text-decoration: none;
   color: black;
+}
+
+// about me section
+.edit-bio {
+  width: 500px;
+}
+
+.form-login {
+  width: 500px;
+}
+
+.bio-column {
+  width: 500px;
+  border-right: 1px solid #FFBD59;
+}
+
+.delete-btn {
+  width: 110px;
+}
+
+#favorite-see-button {
+  text-decoration: none;
+  opacity: 0.9;
+  margin-left: 10px;
+  width: 160px;
+  font-family: Poppins;
+  color: white !important;
 }
