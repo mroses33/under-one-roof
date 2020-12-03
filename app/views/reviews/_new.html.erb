@@ -17,7 +17,7 @@
       </div>
       <div class="modal-body">
 
-        <%= form.input :rating, id: "review_rating", collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= form.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: "rating-review"} %>
         <%= form.input :comment %>
 
 
