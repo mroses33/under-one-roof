@@ -11,16 +11,16 @@
       <% if current_user != @experience.host %>
         <% if Favorite.where(experience: @experience, customer: current_user).exists? %>
             <%= link_to experience_favorite_path(@experience), class: "fav-a-pnk", method: :delete do %>
-              <p id="fav-a-pnk"><i class="fas fa-heart"></i> Favorited!</p>
+              <p id="fav-a-pnk"><i class="fas fa-heart"></i> Favourited!</p>
             <% end %>
         <% else %>
           <%= link_to experience_favorites_path(@experience), class: "fav-a-pnk", method: :post do %>
-            <p id="fav-a-pnk"><i class="far fa-heart"></i> Save to favorites</p>
+            <p id="fav-a-pnk"><i class="far fa-heart"></i> Save to favourites</p>
           <% end %>
         <% end %>
       <% end %>
       <% if @experience.reviews.count > 0 %>
-        <p ><%= render "rating" , experience: @experience %>(<%= @experience.reviews.count %>) </p>
+        <p ><%= render "rating" , experience: @experience %> </p>
       <% else %>
         <p>no ratings yet</p>
       <% end %>
