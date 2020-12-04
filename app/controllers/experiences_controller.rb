@@ -31,7 +31,9 @@ class ExperiencesController < ApplicationController
       @countries << experience.country
     end
     @countries.uniq!
-    #@countries.sort!
+    @countries = @countries.map { |c| ISO3166::Country[c] }
+
+    @countries.sort!
   end
 
   def show
