@@ -4,7 +4,7 @@ This is a project that Agata, Georgi, Mollie & Sophia created for their final pr
 
 The original concept was to create a web app that could be used to offer and book virtual experiences. The experiences would be hosted by people across the globe and would offer a cultural escape to bridge the gap that not being able to travel has left for so many people. 
 
-Under One Roof is coded in Ruby on Rails, HTML, CSS, and JavaScript (including Vue).
+Under One Roof is coded in Ruby on Rails, HTML, CSS, and JavaScript.
 
 We hope you enjoy browsing our code :) 
 
